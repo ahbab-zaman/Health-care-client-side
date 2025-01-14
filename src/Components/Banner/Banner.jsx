@@ -20,7 +20,7 @@ const Banner = () => {
         modules={[Scrollbar, Navigation]}
       >
         <SwiperSlide>
-          <div className="flex justify-between items-center h-[310px]">
+          <div className="flex justify-between items-center h-[310px] px-8">
             <div className="w-1/2 px-6 space-y-2">
               <h4 className="text-6xl font-bold text-[#333333]">
                 Flat 25% off <br />
@@ -43,11 +43,11 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between px-8">
             <div className="w-1/2 px-6 space-y-2">
               <h4 className="text-6xl font-bold text-[#333333]">
-                Flat 25% off <br />
-                Medicine Order
+                Flat 15% off <br />
+                Health Gadgets
               </h4>
               <p className="text-[#333333] font-semibold text-lg">
                 Get the Offer Quickly
@@ -62,11 +62,11 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex items-center justify-between ">
+          <div className="flex items-center justify-between px-8">
             <div className="w-1/2 px-6 space-y-2">
               <h4 className="text-6xl font-bold text-[#333333]">
-                Flat 25% off <br />
-                Medicine Order
+                Flat 5% off <br />
+                Fever Medicine
               </h4>
               <p className="text-[#333333] font-semibold text-lg">
                 Get the Offer Quickly

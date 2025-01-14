@@ -1,0 +1,179 @@
+[
+    {
+      "_id": "64b41f9f1a3a2d1c12345678",
+      "name": "Surgical Mask",
+      "category_name": "COVID Essentials",
+      "image": "https://klbtheme.com/medibazar/wp-content/uploads/2020/09/product05.jpg",
+      "price": 5,
+      "description": "Protective mask to prevent infection spread."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c12345679",
+      "name": "Hand Sanitizer",
+      "category_name": "COVID Essentials",
+      "image": "https://klbtheme.com/medibazar/wp-content/uploads/2020/09/product08.jpg",
+      "price": 12,
+      "description": "Alcohol-based sanitizer to kill germs."
+    },
+    {
+      "_id": "'64b41f9f1a3a2d1c1234567a",
+      "name": "Aspirin",
+      "category_name": "Pain Relief",
+      "image": "https://live.themewild.com/medion/assets/img/product/14.png",
+      "price": 8,
+      "description": "Medication for pain relief and inflammation reduction."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c1234567b",
+      "name": "Paracetamol",
+      "category_name": "Pain Relief",
+      "image": "https://live.themewild.com/medion/assets/img/product/02.png",
+      "price": 3,
+      "description": "Used to treat mild to moderate pain and fever."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c1234567c",
+      "name": "Moisturizing Lotion",
+      "category_name": "Skin Care",
+      "image": "https://live.themewild.com/medion/assets/img/product/01.png",
+      "price": 25,
+      "description": "Hydrating lotion for smooth and healthy skin."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c1234567d",
+      "name": "Sunscreen SPF 50",
+      "category_name": "Skin Care",
+      "image": "https://live.themewild.com/medion/assets/img/product/20.png",
+      "price": 32,
+      "description": "Protects skin from harmful UV rays."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c1234567e",
+      "name": "Blood Pressure Monitor",
+      "category_name": "Healthcare Device",
+      "image": "https://live.themewild.com/medion/assets/img/product/21.png",
+      "price": 52,
+      "description": "Device to measure blood pressure levels."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c1234567f",
+      "name": "Pulse Oxi meter",
+      "category_name": "Healthcare Device",
+      "image": "https://klbtheme.com/medibazar/wp-content/uploads/sb-instagram-feed-images/120899320_251440466299405_8356250328254728198_nlow.jpg",
+      "price": 101,
+      "description": "Device to measure blood oxygen levels."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c12345680",
+      "name": "Face Shield",
+      "category_name": "Protective Equipment",
+      "image": "https://klbtheme.com/medibazar/wp-content/uploads/2020/09/product04.jpg",
+      "price": 15,
+      "description": "Protects face from splashes and airborne particles."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c12345681",
+      "name": "Surgical Gloves",
+      "category_name": "Protective Equipment",
+      "image": "https://klbtheme.com/medibazar/wp-content/uploads/2020/09/product05.jpg",
+      "price": 7,
+      "description": "Disposable gloves for medical procedures."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c12345682",
+      "name": "Insulin Syringe",
+      "category_name": "Diabetes Care",
+      "image": "https://tunatheme.com/tf/html/vicodin-preview/vicodin/img/product/4.png",
+      "price": 22,
+      "description": "Syringe for insulin injections."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c12345683",
+      "name": "Glucose Meter",
+      "category_name": "Diabetes Care",
+      "image": "https://tunatheme.com/tf/html/vicodin-preview/vicodin/img/product/3.png",
+      "price": 44,
+      "description": "Device to measure blood sugar levels."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c12345684",
+      "name": "N95 Mask",
+      "category_name": "COVID Essentials",
+      "image": "https://tunatheme.com/tf/html/vicodin-preview/vicodin/img/product-2/8.png",
+      "price": 14,
+      "description": "Respirator mask for maximum protection."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c12345685",
+      "name": "Infrared Thermometer",
+      "category_name": "COVID Essentials",
+      "image": "https://www.devsnews.com/template/medibazar-html/medibazar/assets/img/products/p-05.png",
+      "price": 52,
+      "description": "Non-contact thermometer for fever detection."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c12345686",
+      "name": "Ibuprofen",
+      "category_name": "Pain Relief",
+      "image": "https://medimela-next.netlify.app/images/product/2.png",
+      "price": 9,
+      "description": "Nonsteroidal anti-inflammatory drug for pain and fever."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c12345687",
+      "name": "Pain Relief Spray",
+      "category_name": "Pain Relief",
+      "image": "https://medimela-next.netlify.app/images/product/10.png",
+      "price": 9.5,
+      "description": "Topical spray for muscle and joint pain."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c12345688",
+      "name": "Vitamin C Serum",
+      "category_name": "Skin Care",
+      "image": "https://medimela-next.netlify.app/images/product/14.png",
+      "price": 33,
+      "description": "Brightens skin and reduces fine lines."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c12345689",
+      "name": "Aloe Vera Gel",
+      "category_name": "Skin Care",
+      "image": "https://live.themewild.com/medion/assets/img/product/20.png",
+      "price": 90,
+      "description": "Soothes irritated skin and promotes healing."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c1234568a",
+      "name": "Digital Weighing Scale",
+      "category_name": "Healthcare Device",
+      "image": "https://tunatheme.com/tf/html/vicodin-preview/vicodin/img/product/3.png",
+      "price": 200,
+      "description": "Device to monitor body weight."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c1234568b",
+      "name": "Nebulizer",
+      "category_name": "Healthcare Device",
+      "image": "https://tunatheme.com/tf/html/vicodin-preview/vicodin/img/product-2/11.png",
+      "price": 66,
+      "description": "Device to deliver medication to the lungs."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c1234568c",
+      "name": "Goggles",
+      "category_name": "Protective Equipment",
+      "image": "https://img.drz.lazcdn.com/static/bd/p/b194e7e662b194fd8994037667ec38bc.png_720x720q80.png_.webp",
+      "price": 27,
+      "description": "Protective eye wear for medical use."
+    },
+    {
+      "_id": "64b41f9f1a3a2d1c1234568d",
+      "name": "Full Body PPE Kit",
+      "category_name": "Protective Equipment",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzHuW0oInNtfF89V3tq_YK4UEjPXeZX3ptfg&s",
+      "price": 120,
+      "description": "Complete protective gear for medical professionals."
+    }
+  ]
+  
