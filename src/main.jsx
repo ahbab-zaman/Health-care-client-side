@@ -8,7 +8,7 @@ const queryClient = new QueryClient();
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router}></RouterProvider>s
+      <RouterProvider router={router}></RouterProvider>
     </QueryClientProvider>
   </StrictMode>
 );

@@ -36,7 +36,7 @@ const Category = () => {
             number={covid.length}
           ></CategoryCard>
         </Link>
-        <Link>
+        <Link to="/list/Pain Relief">
           <CategoryCard
             image={
               "https://demo2.themelexus.com/medilazar/wp-content/uploads/2022/11/home9_png-36-1.png"
@@ -45,21 +45,21 @@ const Category = () => {
             number={pain.length}
           ></CategoryCard>
         </Link>
-        <Link>
+        <Link to="/list/Skin Care">
           <CategoryCard
             image={skinImg}
             category={"Skin Care"}
             number={skin.length}
           ></CategoryCard>
         </Link>
-        <Link>
+        <Link to="/list/Healthcare Device">
           <CategoryCard
             image={equipmentImg}
             category={"Healthcare Devices"}
             number={healthcare.length}
           ></CategoryCard>
         </Link>
-        <Link>
+        <Link to="/list/Protective Equipment">
           <CategoryCard
             image={
               "https://klbtheme.com/medibazar/wp-content/uploads/2020/09/product04.jpg"
@@ -68,7 +68,7 @@ const Category = () => {
             number={equipment.length}
           ></CategoryCard>
         </Link>
-        <Link>
+        <Link to="/list/Diabetes Care">
           <CategoryCard
             image={
               "https://demo2.themelexus.com/medilazar/wp-content/uploads/2022/11/home9_png-39-1.png"

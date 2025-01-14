@@ -137,7 +137,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end space-x-2">
           <div className="dropdown dropdown-end mr-2">
             <div
               tabIndex={0}
@@ -169,12 +169,15 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <button class="px-6 py-3 rounded-2xl bg-[#4E97FD] flex items-center gap-1 relative z-10">
-            <BsCart3 className="text-white text-xl font-semibold"></BsCart3>
-            <div class="bg-[#fff] px-[5px] rounded-full text-black text-sm absolute bottom-4 right-2">
+          <button class="px-6 py-3 rounded-2xl flex items-center gap-1 relative z-10">
+            <BsCart3 className="text-[#4E97FD] text-xl font-semibold"></BsCart3>
+            <div class="px-[5px] rounded-full text-black font-bold text-sm absolute bottom-4 right-2">
               0
             </div>
           </button>
+          <Link to="/login">
+            <button className="px-4 py-2 bg-[#4E97FD] text-white font-semibold rounded-lg">Login</button>
+          </Link>
         </div>
       </div>
     </div>
