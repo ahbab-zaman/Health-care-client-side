@@ -1,5 +1,5 @@
 import useAxiosPublic from "./useAxiosPublic";
-import { useQueries, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
 const useMedicine = () => {
   const axiosPublic = useAxiosPublic();
