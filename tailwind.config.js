@@ -5,6 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         loginBanner: "url('./assets/loginBanner.jpg')",
+        dealBg:"url('./assets/deal-bg.jpg')"
       },
       colors: {
         customBlue: "#4E97FD",
