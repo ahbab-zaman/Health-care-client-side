@@ -4,7 +4,7 @@ const TopBrands = () => {
   return (
     <div>
       <Title title="our top brands"></Title>
-      <div className="bg-[#F2F3F5] py-10 px-4 my-6">
+      <div className="bg-[#F2F3F5] py-10 px-4 mt-6">
         <div className="grid lg:grid-cols-4 grid-cols-1 items-center gap-4 w-11/12 mx-auto">
           <div className=" w-[200px] bg-white p-4 rounded-xl">
             <img

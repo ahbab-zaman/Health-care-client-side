@@ -1,12 +1,24 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../assets/h-icon.png";
+import logo from "../../assets/logo1.png";
+import userImage from "../../assets/user.png";
 import { BsCart3, BsCartPlusFill } from "react-icons/bs";
 import { IoMenu } from "react-icons/io5";
+import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
+  const { user, logOut } = useAuth();
+  const handleLogout = () => {
+    logOut()
+      .then(() => {
+        console.log("User Logout");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
-    <div className="w-full">
-      <div className="navbar w-11/12 mx-auto">
+    <div className="w-full bg-white sticky top-0 z-10">
+      <div className="navbar w-11/12 mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -73,8 +85,8 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/">
-            <div className="flex items-center">
-              <img className="w-10" src={logo} alt="" />
+            <div className="flex items-center gap-1">
+              <img className="w-8" src={logo} alt="" />
               <h2 className="text-xl font-bold">HealthCare</h2>
             </div>
           </Link>
@@ -137,18 +149,22 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end space-x-2">
-          <div className="dropdown dropdown-end mr-2">
+        <div className="navbar-end">
+          <div className="dropdown dropdown-end ">
             <div
               tabIndex={0}
               role="button"
               className="btn btn-ghost btn-circle avatar"
             >
               <div className="w-10 rounded-full">
-                <img
-                  alt="Tailwind CSS Navbar component"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                />
+                {user ? (
+                  <img
+                    alt="Tailwind CSS Navbar component"
+                    src={user.photoURL}
+                  />
+                ) : (
+                  <img src={userImage} alt="" />
+                )}
               </div>
             </div>
             <ul
@@ -164,19 +180,25 @@ const Navbar = () => {
               <li>
                 <a>Settings</a>
               </li>
-              <li>
-                <a>Logout</a>
-              </li>
+              {user ? (
+                <li onClick={handleLogout}>
+                  <Link to="/login">Logout</Link>
+                </li>
+              ) : (
+                ""
+              )}
             </ul>
           </div>
-          <button class="px-6 py-3 rounded-2xl flex items-center gap-1 relative z-10">
+          <button class="px-4 py-3 rounded-2xl flex items-center gap-1 relative z-10">
             <BsCart3 className="text-[#4E97FD] text-xl font-semibold"></BsCart3>
-            <div class="px-[5px] rounded-full text-black font-bold text-sm absolute bottom-4 right-2">
+            <div class="px-[5px] rounded-full text-black font-bold text-sm absolute bottom-5 right-1">
               0
             </div>
           </button>
           <Link to="/login">
-            <button className="px-4 py-2 bg-[#4E97FD] text-white font-semibold rounded-lg">Login</button>
+            <button className="px-4 py-2 bg-[#4E97FD] text-white font-semibold rounded-lg">
+              Login
+            </button>
           </Link>
         </div>
       </div>
