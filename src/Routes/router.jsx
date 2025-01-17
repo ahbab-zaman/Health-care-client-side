@@ -4,6 +4,7 @@ import Home from "../Layouts/Home/Home";
 import Table from "../Components/Table/Table";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import Shop from "../Layouts/Shop/Shop";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
       {
         path: "/list/:category",
         element: <Table></Table>,
+      },
+      {
+        path: "/shop",
+        element: <Shop></Shop>,
       },
     ],
   },

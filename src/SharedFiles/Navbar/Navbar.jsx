@@ -112,7 +112,7 @@ const Navbar = () => {
                     ? "bg-[#4E97FD] text-white semibold"
                     : "text-gray-500 bg-transparent"
                 }
-                to="/"
+                to="/shop"
               >
                 Shop
               </NavLink>
@@ -195,11 +195,17 @@ const Navbar = () => {
               0
             </div>
           </button>
-          <Link to="/login">
-            <button className="px-4 py-2 bg-[#4E97FD] text-white font-semibold rounded-lg">
-              Login
-            </button>
-          </Link>
+          {user ? (
+            ""
+          ) : (
+            <div>
+              <Link to="/login">
+                <button className="px-4 py-2 bg-[#4E97FD] text-white font-semibold rounded-lg">
+                  Login
+                </button>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>
