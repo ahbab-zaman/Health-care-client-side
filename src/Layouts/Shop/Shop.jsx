@@ -3,19 +3,58 @@ import useMedicine from "../../Hooks/useMedicine";
 import { FaRegEye } from "react-icons/fa";
 import { BiSelectMultiple } from "react-icons/bi";
 import { useState } from "react";
-import { Button, Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
+import dollar from "../../assets/dollars.png";
+import useAuth from "../../Hooks/useAuth";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useCart from "../../Hooks/useCart";
+import { toast, Zoom } from "react-toastify";
+import { BsCart3 } from "react-icons/bs";
 
 const Shop = () => {
   const [medicine] = useMedicine();
-  let [isOpen, setIsOpen] = useState(false);
+  const [selectedData, setSelectedData] = useState(null);
+  const { user } = useAuth();
+  const [, refetch] = useCart();
+  const axiosSecure = useAxiosSecure();
+  const handleViewDetails = (item) => {
+    setSelectedData(item);
+    const modal = document.getElementById("my_modal");
+    modal.showModal();
+  };
 
-  function open(id) {
-    console.log(id);
-    setIsOpen(true);
-  }
-  function close() {
-    setIsOpen(false);
-  }
+  const handleAddToCart = (medicine) => {
+    console.log(medicine);
+    if (user && user?.email) {
+      const cartItem = {
+        cartId: medicine._id,
+        email: user?.email,
+        name: medicine.name,
+        category: medicine.category_name,
+        price: medicine.price,
+        image: medicine.image,
+      };
+
+      axiosSecure.post("/addCart", cartItem).then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          toast("🛒 Cart Added Successfully", {
+            position: "top-right",
+            autoClose: 700,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+            theme: "light",
+            transition: Zoom,
+          });
+        }
+        refetch();
+      });
+    } else {
+      
+    }
+  };
   console.log(medicine);
   return (
     <div>
@@ -71,55 +110,49 @@ const Shop = () => {
                   </p>
                 </td>
                 <td className="font-semibold text-base">$ {item.price}.00</td>
-                <td onClick={() => open(item._id)}>
-                  <p className="">
+                <td onClick={() => handleViewDetails(item)}>
+                  <p>
                     <FaRegEye className="text-xl transform transition-transform duration-300 hover:scale-125"></FaRegEye>
                   </p>
                 </td>
-                <td>
+                <td onClick={() => handleAddToCart(item)}>
                   <p className="">
                     <BiSelectMultiple className="text-xl transform transition-transform duration-300 hover:scale-125"></BiSelectMultiple>
                   </p>
                 </td>
-                <Dialog
-                  open={isOpen}
-                  as="div"
-                  className="relative z-10 focus:outline-none"
-                  onClose={close}
-                >
-                  <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-                    <div className="flex min-h-full items-center justify-center p-4">
-                      <DialogPanel
-                        transition
-                        className="w-full max-w-md rounded-xl bg-white/5 p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
-                      >
-                        <DialogTitle
-                          as="h3"
-                          className="text-base/7 font-medium text-white"
-                        >
-                          Payment successful
-                        </DialogTitle>
-                        <p className="mt-2 text-sm/6 text-white/50">
-                          Your payment has been successfully submitted. We’ve
-                          sent you an email with all of the details of your
-                          order.
-                        </p>
-                        <div className="mt-4">
-                          <Button
-                            className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"
-                            onClick={close}
-                          >
-                            Got it, thanks!
-                          </Button>
-                        </div>
-                      </DialogPanel>
-                    </div>
-                  </div>
-                </Dialog>
               </tr>
             ))}
           </tbody>
         </table>
+
+        <dialog id="my_modal" className="modal modal-bottom sm:modal-middle">
+          {selectedData ? (
+            <div className="modal-box">
+              <img src={selectedData.image} alt="" />
+              <h3 className="font-bold text-lg">{selectedData.name}</h3>
+              <div className="py-2">
+                <p className="font-bold py-1 px-2 bg-[#EFEDF2] inline rounded-full text-lg text-[#4E97FD]">
+                  {selectedData.category_name}
+                </p>
+              </div>
+              <p className="py-2 text-gray-500">{selectedData.description}</p>
+              <p className="py-2 text-xl font-semibold flex items-center">
+                ${selectedData.price}.00
+                <img className="w-6" src={dollar} alt="" />
+              </p>
+
+              <div className="modal-action ">
+                <form method="dialog" className="w-full">
+                  <button className="btn bg-[#4E97FD] font-bold text-white w-full">
+                    Back
+                  </button>
+                </form>
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+        </dialog>
       </div>
     </div>
   );

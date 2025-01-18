@@ -4,9 +4,11 @@ import userImage from "../../assets/user.png";
 import { BsCart3, BsCartPlusFill } from "react-icons/bs";
 import { IoMenu } from "react-icons/io5";
 import useAuth from "../../Hooks/useAuth";
+import useCart from "../../Hooks/useCart";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
+  const [cart] = useCart();
   const handleLogout = () => {
     logOut()
       .then(() => {
@@ -191,8 +193,8 @@ const Navbar = () => {
           </div>
           <button class="px-4 py-3 rounded-2xl flex items-center gap-1 relative z-10">
             <BsCart3 className="text-[#4E97FD] text-xl font-semibold"></BsCart3>
-            <div class="px-[5px] rounded-full text-black font-bold text-sm absolute bottom-5 right-1">
-              0
+            <div class="px-[5px] rounded-full text-black font-bold text-sm absolute bottom-5 -right-1">
+              {cart.length}
             </div>
           </button>
           {user ? (
