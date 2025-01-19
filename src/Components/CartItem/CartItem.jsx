@@ -1,20 +1,46 @@
 import { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useCart from "../../Hooks/useCart";
 
-const CartItem = ({ item, totalPrice, quantityPrice, setQuantityPrice }) => {
+const CartItem = ({ item, quantityPrice, setQuantityPrice }) => {
   const { _id, image, name, price } = item;
+  const [, refetch] = useCart();
   const [quantity, setQuantity] = useState(1);
+  const axiosSecure = useAxiosSecure();
   const increment = () => {
     setQuantity((prev) => prev + 1);
     setQuantityPrice(quantityPrice + price);
   };
   const decrement = () => {
-    if (quantity > 1) setQuantity((prev) => prev - 1);
-    totalPrice - price;
+    if (quantity > 0) setQuantity((prev) => prev - 1);
+    setQuantityPrice(quantityPrice - price);
   };
 
   const handleDelete = (id) => {
-    console.log(id)
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/cart/${id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success",
+            });
+            refetch();
+          }
+        });
+      }
+    });
   };
   return (
     <div className="flex justify-around items-center border-b">
@@ -28,7 +54,7 @@ const CartItem = ({ item, totalPrice, quantityPrice, setQuantityPrice }) => {
         <button
           onClick={decrement}
           className="text-gray-600 text-lg font-semibold hover:text-gray-900 focus:outline-none"
-          disabled={quantity <= 1}
+          disabled={quantity <= 0}
         >
           -
         </button>
