@@ -51,8 +51,6 @@ const Shop = () => {
         }
         refetch();
       });
-    } else {
-      
     }
   };
   console.log(medicine);
@@ -116,7 +114,7 @@ const Shop = () => {
                   </p>
                 </td>
                 <td onClick={() => handleAddToCart(item)}>
-                  <p className="">
+                  <p>
                     <BiSelectMultiple className="text-xl transform transition-transform duration-300 hover:scale-125"></BiSelectMultiple>
                   </p>
                 </td>

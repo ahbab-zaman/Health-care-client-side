@@ -5,6 +5,7 @@ import Table from "../Components/Table/Table";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Shop from "../Layouts/Shop/Shop";
+import Cart from "../Layouts/Cart/Cart";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop></Shop>,
+      },
+      {
+        path: "/cart",
+        element: <Cart></Cart>,
       },
     ],
   },

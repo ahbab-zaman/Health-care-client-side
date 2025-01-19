@@ -1,0 +1,60 @@
+import { Link } from "react-router-dom";
+import useCart from "../../Hooks/useCart";
+import CartItem from "../../Components/CartItem/CartItem";
+import { useState } from "react";
+
+const Cart = () => {
+  const [cart, refetch] = useCart();
+  const totalPrice = cart.reduce((auc, curr) => auc + curr.price, 0);
+  const [quantityPrice, setQuantityPrice] = useState(totalPrice);
+  return (
+    <div>
+      <div className="bg-loginBanner bg-blend-darken bg-[#00000081] lg:h-[300px] h-auto bg-cover flex flex-col gap-4 justify-center items-center">
+        <div className="text-5xl font-semibold text-[#ffffffe1] space-x-4">
+          <Link
+            to="/"
+            className="hover:text-[#4E97FD] hover:transition-colors hover:duration-300"
+          >
+            Home
+          </Link>{" "}
+          |
+          <Link
+            to="/cart"
+            className="hover:text-[#4E97FD] hover:transition-colors hover:duration-300"
+          >
+            Cart
+          </Link>
+        </div>
+      </div>
+
+      <div className="flex gap-4 w-11/12 mx-auto my-6 px-4 py-8">
+        <div className="w-3/4 flex flex-col justify-center gap-8">
+          {cart.map((item) => (
+            <CartItem
+              item={item}
+              key={item._id}
+              quantityPrice={quantityPrice}
+              setQuantityPrice={setQuantityPrice}
+            ></CartItem>
+          ))}
+        </div>
+        <div className="w-1/4 bg-[#F8F8F8] py-12 px-6">
+          <h4 className="text-xl font-bold">Cart Total</h4>
+          <div className="divider"></div>
+          <div className="flex justify-between items-center">
+            <h2 className="font-bold">SubTotal : </h2>
+            <p className="font-semibold">$ {quantityPrice}</p>
+          </div>
+          <div className="divider"></div>
+          <div className="flex justify-between items-center">
+            <h2 className="font-bold">Total : </h2>
+            <p className="font-semibold">
+              {<p className="font-semibold">$ {quantityPrice}</p>}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default Cart;
