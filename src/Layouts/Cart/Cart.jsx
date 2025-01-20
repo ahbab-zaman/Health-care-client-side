@@ -26,53 +26,55 @@ const Cart = () => {
           </Link>
         </div>
       </div>
-      <div className="flex gap-4 w-11/12 mx-auto my-6 px-4 py-8">
-        <div className="w-3/4 flex flex-col justify-center gap-8">
-          {cart.map((item) => (
-            <CartItem
-              item={item}
-              key={item._id}
-              quantityPrice={quantityPrice}
-              setQuantityPrice={setQuantityPrice}
-            ></CartItem>
-          ))}
-        </div>
-        <div className="w-1/4 bg-[#F8F8F8] py-12 px-6">
-          <h4 className="text-xl font-bold">Cart Total</h4>
-          <div className="divider"></div>
-          <div className="flex justify-between items-center">
-            <h2 className="font-bold">SubTotal : </h2>
-            <p className="font-semibold">$ {quantityPrice}</p>
+      {cart.length === 0 ? (
+        <h2 className="text-2xl font-bold text-center py-12 text-[#333333]">No Item Added to the Cart </h2>
+      ) : (
+        <div className="flex justify-center items-start gap-4 w-11/12 mx-auto my-6 px-4 py-4">
+          <div className="w-3/4 flex flex-col justify-center gap-8">
+            {cart.map((item) => (
+              <CartItem
+                item={item}
+                key={item._id}
+                quantityPrice={quantityPrice}
+                setQuantityPrice={setQuantityPrice}
+              ></CartItem>
+            ))}
           </div>
-          <div className="divider"></div>
-          <div className="flex justify-between items-center">
-            <h2 className="font-bold">Total : </h2>
-            <p className="font-semibold">
-              {<p className="font-semibold">$ {quantityPrice}</p>}
-            </p>
-          </div>
-          {cart.length ? (
-            <Link to="/payment">
+          <div className="w-1/4 bg-[#F8F8F8] py-12 px-6">
+            <h4 className="text-xl font-bold">Cart Total</h4>
+            <div className="divider"></div>
+            <div className="flex justify-between items-center">
+              <h2 className="font-bold">SubTotal : </h2>
+              <p className="font-semibold">$ {quantityPrice}</p>
+            </div>
+            <div className="divider"></div>
+            <div className="flex justify-between items-center">
+              <h2 className="font-bold">Total : </h2>
+              <p className="font-semibold">
+                {<p className="font-semibold">$ {quantityPrice}</p>}
+              </p>
+            </div>
+            {cart.length ? (
+              <Link to="/payment">
+                <div className="mt-4">
+                  <button className="py-2 px-4 rounded-lg text-lg font-bold uppercase bg-[#4E97FD] text-[#fff] w-full">
+                    Pay
+                  </button>
+                </div>
+              </Link>
+            ) : (
               <div className="mt-4">
                 <button
+                  disabled
                   className="py-2 px-4 rounded-lg text-lg font-bold uppercase bg-[#4E97FD] text-[#fff] w-full"
                 >
                   Pay
                 </button>
               </div>
-            </Link>
-          ) : (
-            <div className="mt-4">
-              <button
-                disabled
-                className="py-2 px-4 rounded-lg text-lg font-bold uppercase bg-[#4E97FD] text-[#fff] w-full"
-              >
-                Pay
-              </button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
