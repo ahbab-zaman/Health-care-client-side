@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import { toast } from "react-toastify";
 
 const imageApiKey = import.meta.env.VITE_IMAGE_API;
 const imageHostingApi = `https://api.imgbb.com/1/upload?key=${imageApiKey}`;
@@ -21,7 +22,6 @@ const Register = () => {
     const userInfo = {
       name: data.name,
       email: data.email,
-      password: data.password,
       role: data.role,
       image: res.data.data.display_url,
     };
@@ -33,9 +33,19 @@ const Register = () => {
           displayName: data.name,
           photoURL: userInfo.image,
           email: data.email,
-        });
-        reset();
-        navigate("/");
+        })
+          .then(() => {
+            axiosPublic.post("/addUser", userInfo).then((res) => {
+              if (res.data.insertedId) {
+                toast("User Created Successfully");
+                reset();
+                navigate("/");
+              }
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       })
       .catch((error) => {
         console.log(error);

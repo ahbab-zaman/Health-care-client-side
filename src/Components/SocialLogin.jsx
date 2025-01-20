@@ -1,20 +1,26 @@
 import { useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import googleImg from "../assets/signIn.png";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
+import { toast } from "react-toastify";
 
 const SocialLogin = () => {
   const { googleSignIn } = useAuth();
   const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic();
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((res) => {
-        // const user = (res.user = user);
-        // const userInfo = {
-        //   name: res.user.displayName,
-        //   email: res.user.email,
-        // };
-        console.log(res.data);
-        navigate("/");
+        const userInfo = {
+          name: res.user.displayName,
+          image: res.user.photoURL,
+          email: res.user.email,
+          role: "user",
+        };
+        axiosPublic.post("/addUser", userInfo).then((res) => {
+          console.log(res.data);
+          navigate("/");
+        });
       })
       .catch((error) => {
         console.log(error);

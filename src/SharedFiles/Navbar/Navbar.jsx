@@ -180,7 +180,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/dashboard">Dashboard</Link>
+                <Link to="/dashboard/adminHome">Dashboard</Link>
               </li>
               {user ? (
                 <li onClick={handleLogout}>
