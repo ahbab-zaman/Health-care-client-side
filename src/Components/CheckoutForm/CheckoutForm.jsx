@@ -17,8 +17,6 @@ const CheckoutForm = () => {
   const axiosSecure = useAxiosSecure();
   const [cart, refetch] = useCart();
   const totalPrice = cart.reduce((prev, curr) => prev + curr.price, 0);
-  //   const now = new Date();
-  //   const date = <Moment>{now}</Moment>;
   useEffect(() => {
     if (totalPrice > 0) {
       axiosSecure
@@ -85,7 +83,7 @@ const CheckoutForm = () => {
         };
         const res = await axiosSecure.post("/payments", payment);
         refetch();
-        // navigate("/");
+        navigate("/invoice");
         console.log(res.data);
         if (res.data.paymentResult?.insertedId) {
           toast("💸 Payment Successful", {
@@ -103,31 +101,55 @@ const CheckoutForm = () => {
       }
     }
   };
+  const cardStyle = {
+    style: {
+      base: {
+        fontSize: "18px",
+        color: "#2D3748",
+        fontFamily: "'Poppins', sans-serif",
+        fontWeight: "500",
+        backgroundColor: "#EDF2F7",
+        border: "1px solid #CBD5E0",
+        borderRadius: "8px",
+        padding: "20px",
+        letterSpacing: "0.5px",
+        textAlign: "left",
+        "::placeholder": {
+          color: "#A0AEC0",
+          fontStyle: "italic",
+        },
+        ":-webkit-autofill": {
+          color: "#2D3748",
+          backgroundColor: "#E2E8F0",
+        },
+      },
+      invalid: {
+        color: "#E53E3E",
+        iconColor: "#E53E3E",
+        backgroundColor: "#FFF5F5",
+        borderColor: "#F56565",
+      },
+      complete: {
+        color: "#38A169",
+        iconColor: "#38A169",
+        backgroundColor: "#F0FFF4",
+        borderColor: "#C6F6D5",
+      },
+    },
+  };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <CardElement
-          options={{
-            style: {
-              base: {
-                fontSize: "16px",
-                color: "#424770",
-                "::placeholder": {
-                  color: "#aab7c4",
-                },
-              },
-              invalid: {
-                color: "#9e2146",
-              },
-            },
-          }}
-        />
+    <div className="w-3/4 mx-auto my-12">
+      <form
+        className="w-3/4 mx-auto p-6 bg-white shadow-xl rounded-lg"
+        onSubmit={handleSubmit}
+      >
+        <CardElement options={cardStyle} />
         <button
-          className="btn btn-success font-bold mt-4"
+          className="btn bg-[#4E97FD] text-white w-full font-bold mt-6"
           disabled={!stripe || !clientSecret}
         >
-          Pay
+          Checkout
         </button>
         <p className="text-red-600">{error}</p>
       </form>

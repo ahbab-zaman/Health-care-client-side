@@ -7,6 +7,7 @@ import Register from "../Pages/Register/Register";
 import Shop from "../Layouts/Shop/Shop";
 import Cart from "../Layouts/Cart/Cart";
 import Payment from "../Layouts/Cart/Payment";
+import Invoice from "../Pages/Invoice/Invoice";
 
 export const router = createBrowserRouter([
   {
@@ -30,9 +31,13 @@ export const router = createBrowserRouter([
         element: <Cart></Cart>,
       },
       {
-        path:"/payment",
-        element:<Payment></Payment>
-      }
+        path: "/payment",
+        element: <Payment></Payment>,
+      },
+      {
+        path: "/invoice",
+        element: <Invoice></Invoice>,
+      },
     ],
   },
   {
