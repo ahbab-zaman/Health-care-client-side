@@ -6,9 +6,9 @@ import { TiDeleteOutline } from "react-icons/ti";
 import { IoMdPrint } from "react-icons/io";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { useReactToPrint } from "react-to-print";
-import html2canvas from "html2canvas";
+import domtoimage from "dom-to-image";
 import jsPDF from "jspdf";
+import "./invoice.css";
 
 const Invoice = () => {
   const { user } = useAuth();
@@ -25,69 +25,86 @@ const Invoice = () => {
   });
 
   const handleDownload = async () => {
-    const element = invoiceRef.current;
+    const element = document.getElementById("invoice");
+    const pdfWidthPx = 800;
+    const pdfHeightPx = 1200;
+    const pdfWidthPt = 210;
+    const pdfHeightPt = (pdfWidthPt * pdfHeightPx) / pdfWidthPx;
     try {
-      const canvas = await html2canvas(element, { scale: 2 });
-      const imgData = canvas.toDataURL("image/png");
-
-      const pdf = new jsPDF("p", "mm", "a4");
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-
+      const imgData = await domtoimage.toPng(element);
+      const pdf = new jsPDF({
+        orientation: "portrait",
+        unit: "mm",
+        format: [pdfWidthPt, pdfHeightPt],
+      });
+      const pdfWidth = pdf.internal.pageSize.getWidth("1200px");
+      const pdfHeight = pdf.internal.pageSize.getHeight("1000px");
       pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
       pdf.save("invoice.pdf");
+      navigate("/")
     } catch (error) {
       console.error("Error generating PDF:", error);
     }
   };
   return (
-    <div ref={invoiceRef} className="w-11/12 mx-auto my-4 mb-12">
-      <div className="flex items-center justify-between">
-        <div>
-          <img className="w-24 h-24 rounded-full" src={user?.photoURL} alt="" />
-          <h2 className="text-lg font-semibold">Name: {user?.displayName}</h2>
-          <h2 className="text-lg font-semibold">Email: {user?.email}</h2>
+    <>
+      <div id="invoice" ref={invoiceRef} className="w-11/12 mx-auto p-6 pb-12 mb-12">
+        <div className="flex items-center justify-between px-8">
+          <div>
+            <img
+              className="w-24 h-24 rounded-full"
+              src={user?.photoURL}
+              alt=""
+            />
+            <h2 className="text-lg font-semibold">Name: {user?.displayName}</h2>
+            <h2 className="text-lg font-semibold">Email: {user?.email}</h2>
+          </div>
+          <div className="space-y-2">
+            <h2 className="text-4xl font-semibold">INVOICE</h2>
+            <div className="flex items-center">
+            <img className="w-10" src={logo} alt="" />
+            <h3 className="text-xl font-bold">Health Care</h3>
+            </div>
+
+          </div>
         </div>
-        <div className="space-y-2">
-          <h2 className="text-4xl font-semibold">INVOICE</h2>
-          <img className="w-16" src={logo} alt="" />
-        </div>
-      </div>
-      <div className="mt-6">
-        <div className="overflow-x-auto">
-          <table className="table">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Transaction ID</th>
-                <th>Email</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {invoice.map((item) => (
-                <tr item={item} key={item._id}>
-                  <th>{item.date}</th>
-                  <th>{item.transactionId}</th>
-                  <th>{item.email}</th>
-                  <th>
-                    <TiDeleteOutline className="text-2xl"></TiDeleteOutline>
-                  </th>
+        <div className="mt-6 text-black">
+          <div className="overflow-x-auto">
+            <table className="table text-black pb-8">
+              <thead className="text-black">
+                <tr>
+                  <th>Date</th>
+                  <th>Transaction ID</th>
+                  <th>Email</th>
+                  <th>Action</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <div className="flex justify-end mt-2">
-          <button
-            onClick={handleDownload}
-            className="px-4 py-2 rounded-full bg-[#4e97fd] flex items-center text-white font-bold"
-          >
-            <IoMdPrint></IoMdPrint> Download
-          </button>
+              </thead>
+              <tbody>
+                {invoice.map((item) => (
+                  <tr item={item} key={item._id}>
+                    <th>{item.date}</th>
+                    <th>{item.transactionId}</th>
+                    <th>{item.email}</th>
+                    <th>
+                      <TiDeleteOutline className="text-2xl"></TiDeleteOutline>
+                    </th>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
+      <div className="flex justify-end w-11/12 mx-auto">
+        <button
+          onClick={handleDownload}
+          className="px-4 py-2 rounded-full bg-[#4e97fd] flex items-center text-white font-bold"
+        >
+          <IoMdPrint></IoMdPrint> Download
+        </button>
+      </div>
+      s
+    </>
   );
 };
 

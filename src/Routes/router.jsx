@@ -8,6 +8,10 @@ import Shop from "../Layouts/Shop/Shop";
 import Cart from "../Layouts/Cart/Cart";
 import Payment from "../Layouts/Cart/Payment";
 import Invoice from "../Pages/Invoice/Invoice";
+import Dashboard from "../Layouts/Dashboard/Dashboard";
+import AdminHome from "../SharedFiles/AdminLayout/AdminHome";
+import ManageUsers from "../SharedFiles/AdminLayout/ManageUsers";
+import ManageCategory from "../SharedFiles/AdminLayout/ManageCategory";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +51,24 @@ export const router = createBrowserRouter([
   {
     path: "/invoice",
     element: <Invoice></Invoice>,
+  },
+  {
+    path: "dashboard",
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: "adminHome",
+        element: <AdminHome></AdminHome>,
+      },
+      {
+        path: "manageUsers",
+        element: <ManageUsers></ManageUsers>,
+      },
+      {
+        path: "manageCategory",
+        element: <ManageCategory></ManageCategory>,
+      },
+    ],
   },
 ]);
 
