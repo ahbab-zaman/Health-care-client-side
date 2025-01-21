@@ -1,4 +1,4 @@
-const SellerLayout = () => {
+const ManageMedicine = () => {
     return (
         <div>
             
@@ -6,4 +6,4 @@ const SellerLayout = () => {
     );
 };
 
-export default SellerLayout;
+export default ManageMedicine;

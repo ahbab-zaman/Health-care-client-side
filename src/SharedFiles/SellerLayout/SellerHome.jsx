@@ -1,4 +1,4 @@
-const UserLayout = () => {
+const SellerHome = () => {
     return (
         <div>
             
@@ -6,4 +6,4 @@ const UserLayout = () => {
     );
 };
 
-export default UserLayout;
+export default SellerHome;

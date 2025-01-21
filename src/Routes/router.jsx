@@ -14,6 +14,11 @@ import ManageUsers from "../SharedFiles/AdminLayout/ManageUsers";
 import ManageCategory from "../SharedFiles/AdminLayout/ManageCategory";
 import PrivateRoute from "./PrivateRoute";
 import PaymentManagement from "../SharedFiles/AdminLayout/PaymentManagement";
+import ManageMedicine from "../SharedFiles/SellerLayout/ManageMedicine";
+import SellerHome from "../SharedFiles/SellerLayout/SellerHome";
+import PaymentHistory from "../SharedFiles/SellerLayout/PaymentHistory";
+import Advertisement from "../SharedFiles/SellerLayout/Advertisement";
+import AdminRoute from "./AdminRoute";
 
 export const router = createBrowserRouter([
   {
@@ -62,6 +67,7 @@ export const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
+      // Admin routes
       {
         path: "adminHome",
         element: <AdminHome></AdminHome>,
@@ -72,11 +78,38 @@ export const router = createBrowserRouter([
       },
       {
         path: "manageCategory",
-        element: <ManageCategory></ManageCategory>,
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <ManageCategory></ManageCategory>
+            </AdminRoute>
+          </PrivateRoute>
+        ),
       },
       {
         path: "paymentManage",
         element: <PaymentManagement></PaymentManagement>,
+      },
+      // Seller routes
+      {
+        path: "sellerHome",
+        element: <SellerHome></SellerHome>,
+      },
+      {
+        path: "manageMedicine",
+        element: <ManageMedicine></ManageMedicine>,
+      },
+      {
+        path: "payHistory",
+        element: <PaymentHistory></PaymentHistory>,
+      },
+      {
+        path: "advertisement",
+        element: <Advertisement></Advertisement>,
+      },
+      // User routes
+      {
+        path: "userHistory",
       },
     ],
   },

@@ -5,10 +5,12 @@ import { BsCart3, BsCartPlusFill } from "react-icons/bs";
 import { IoMenu } from "react-icons/io5";
 import useAuth from "../../Hooks/useAuth";
 import useCart from "../../Hooks/useCart";
+import useRole from "../../Hooks/useRole";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
   const [cart] = useCart();
+  const [role] = useRole();
   const handleLogout = () => {
     logOut()
       .then(() => {
@@ -180,7 +182,15 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/dashboard/adminHome">Dashboard</Link>
+                {role === "admin" && (
+                  <Link to="/dashboard/adminHome">Dashboard</Link>
+                )}
+                {role === "seller" && (
+                  <Link to="/dashboard/sellerHome">Dashboard</Link>
+                )}
+                {role === "user" && (
+                  <Link to="/dashboard/userHistory">Dashboard</Link>
+                )}
               </li>
               {user ? (
                 <li onClick={handleLogout}>

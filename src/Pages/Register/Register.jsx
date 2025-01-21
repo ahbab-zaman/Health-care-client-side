@@ -9,7 +9,7 @@ const imageHostingApi = `https://api.imgbb.com/1/upload?key=${imageApiKey}`;
 const Register = () => {
   const axiosPublic = useAxiosPublic();
   const navigate = useNavigate();
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit } = useForm();
   const { createUser, profileUpdate } = useAuth();
   const onSubmit = async (data) => {
     const imageFile = { image: data.image[0] };
@@ -38,7 +38,6 @@ const Register = () => {
             axiosPublic.post("/addUser", userInfo).then((res) => {
               if (res.data.insertedId) {
                 toast("User Created Successfully");
-                reset();
                 navigate("/");
               }
             });
@@ -140,11 +139,10 @@ const Register = () => {
                         <option disabled value="default">
                           Select Your Role
                         </option>
-                        <option className="font-semibold">User</option>
-                        <option className="font-semibold">Seller</option>
+                        <option className="font-semibold">user</option>
+                        <option className="font-semibold">seller</option>
                       </select>
                     </div>
-
                     <div className="w-full">
                       <input
                         {...register("image", { required: true })}
