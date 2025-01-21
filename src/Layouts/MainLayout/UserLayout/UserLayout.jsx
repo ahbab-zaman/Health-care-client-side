@@ -1,4 +1,4 @@
-const ManageUsers = () => {
+const UserLayout = () => {
     return (
         <div>
             
@@ -6,4 +6,4 @@ const ManageUsers = () => {
     );
 };
 
-export default ManageUsers;
+export default UserLayout;

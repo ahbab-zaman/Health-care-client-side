@@ -1,27 +1,19 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
-import googleImg from "../../assets/signIn.png";
+import SocialLogin from "../../Components/SocialLogin";
 const Login = () => {
-  const { userLogin, googleSignIn } = useAuth();
+  const { userLogin } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const { register, handleSubmit, rest } = useForm();
+  const from = location?.state?.from?.pathname || "/";
   const onSubmit = (data) => {
     userLogin(data.email, data.password)
       .then((res) => {
         const user = res.user;
         console.log(user);
-        navigate("/");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  const handleGoogleSignIn = () => {
-    googleSignIn()
-      .then((res) => {
-        console.log(res.data);
+        navigate(from);
       })
       .catch((error) => {
         console.log(error);
@@ -99,18 +91,7 @@ const Login = () => {
             </div>
           </div>
           <div className="divider -mt-4 mb-4 w-[90%] mx-auto font-bold">OR</div>
-          <div
-            onClick={handleGoogleSignIn}
-            className="flex justify-between items-center w-[90%] mx-auto border p-3 rounded-full bg-white"
-          >
-            <div>
-              <img className="w-8" src={googleImg} alt="" />
-            </div>
-            <div className="text-[#333333] text-lg font-bold">
-              Login With Google
-            </div>
-            <div></div>
-          </div>
+          <SocialLogin></SocialLogin>
         </div>
       </div>
     </div>

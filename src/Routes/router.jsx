@@ -12,6 +12,8 @@ import Dashboard from "../Layouts/Dashboard/Dashboard";
 import AdminHome from "../SharedFiles/AdminLayout/AdminHome";
 import ManageUsers from "../SharedFiles/AdminLayout/ManageUsers";
 import ManageCategory from "../SharedFiles/AdminLayout/ManageCategory";
+import PrivateRoute from "./PrivateRoute";
+import PaymentManagement from "../SharedFiles/AdminLayout/PaymentManagement";
 
 export const router = createBrowserRouter([
   {
@@ -54,7 +56,11 @@ export const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard></Dashboard>,
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "adminHome",
@@ -67,6 +73,10 @@ export const router = createBrowserRouter([
       {
         path: "manageCategory",
         element: <ManageCategory></ManageCategory>,
+      },
+      {
+        path: "paymentManage",
+        element: <PaymentManagement></PaymentManagement>,
       },
     ],
   },

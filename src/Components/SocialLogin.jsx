@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import googleImg from "../assets/signIn.png";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
-import { toast } from "react-toastify";
 
 const SocialLogin = () => {
   const { googleSignIn } = useAuth();
