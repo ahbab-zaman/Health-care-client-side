@@ -9,7 +9,7 @@ const Category = () => {
   const covid = medicine.filter(
     (item) => item.category_name === "COVID Essentials"
   );
-  console.log(covid)
+  console.log(covid);
   const pain = medicine.filter((item) => item.category_name === "Pain Relief");
   const skin = medicine.filter((item) => item.category_name === "Skin Care");
   const healthcare = medicine.filter(
@@ -21,7 +21,6 @@ const Category = () => {
   const diabetes = medicine.filter(
     (item) => item.category_name === "Diabetes Care"
   );
-  console.log(covid, pain, skin, healthcare, equipment, diabetes);
   return (
     <div>
       <Title title="Popular category"></Title>

@@ -8,7 +8,6 @@ import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useCart from "../../Hooks/useCart";
 import { toast, Zoom } from "react-toastify";
-import { BsCart3 } from "react-icons/bs";
 
 const Shop = () => {
   const [medicine] = useMedicine();
