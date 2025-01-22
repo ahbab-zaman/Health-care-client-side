@@ -19,6 +19,7 @@ import SellerHome from "../SharedFiles/SellerLayout/SellerHome";
 import PaymentHistory from "../SharedFiles/SellerLayout/PaymentHistory";
 import Advertisement from "../SharedFiles/SellerLayout/Advertisement";
 import AdminRoute from "./AdminRoute";
+import UpdateModal from "../Components/UpdateModal/UpdateModal";
 
 export const router = createBrowserRouter([
   {
@@ -75,6 +76,12 @@ export const router = createBrowserRouter([
       {
         path: "manageUsers",
         element: <ManageUsers></ManageUsers>,
+      },
+      {
+        path: "update/:id",
+        element: <UpdateModal></UpdateModal>,
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_URL}/singleCategory/${[params.id]}`),
       },
       {
         path: "manageCategory",

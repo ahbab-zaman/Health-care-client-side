@@ -7,6 +7,7 @@ import useCategory from "../../Hooks/useCategory";
 import Loading from "../../Components/Loading/Loading";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ManageCategory = () => {
   const axiosSecure = useAxiosSecure();
@@ -101,18 +102,25 @@ const ManageCategory = () => {
                     <p className="font-bold">{item.quantity} Pieces</p>
                   </td>
                   <th className="text-xl">
-                    <FaEdit></FaEdit>
+                    <Link to={`/dashboard/update/${item._id}`}>
+                      <FaEdit></FaEdit>
+                    </Link>
                   </th>
                   <th className="text-xl">
                     <FaTrash onClick={() => handleDelete(item._id)}></FaTrash>
                   </th>
+                  {/* <UpdateModal
+                    item={item}
+                    open={open}
+                    setOpen={setOpen}
+                    refetch={refetch}
+                  ></UpdateModal> */}
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
       </div>
-
       <Dialog
         open={isOpen}
         as="div"
