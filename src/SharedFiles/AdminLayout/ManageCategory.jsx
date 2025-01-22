@@ -109,12 +109,6 @@ const ManageCategory = () => {
                   <th className="text-xl">
                     <FaTrash onClick={() => handleDelete(item._id)}></FaTrash>
                   </th>
-                  {/* <UpdateModal
-                    item={item}
-                    open={open}
-                    setOpen={setOpen}
-                    refetch={refetch}
-                  ></UpdateModal> */}
                 </tr>
               ))}
             </tbody>
