@@ -3,7 +3,6 @@ import Loading from "../../Components/Loading/Loading";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Title from "../../Components/Title/Title";
-import { useState } from "react";
 import UserTable from "../../Components/UserTable/UserTable";
 
 const ManageUsers = () => {
@@ -13,6 +12,7 @@ const ManageUsers = () => {
     queryKey: ["user", user?.email],
     queryFn: async () => {
       const { data } = await axiosSecure.get(`/allUsers/${user?.email}`);
+      console.log(data);
       return data;
     },
   });
@@ -34,7 +34,11 @@ const ManageUsers = () => {
             </thead>
             <tbody>
               {users.map((user) => (
-                <UserTable user={user} key={user._id} refetch={refetch}></UserTable>
+                <UserTable
+                  user={user}
+                  key={user._id}
+                  refetch={refetch}
+                ></UserTable>
               ))}
             </tbody>
           </table>

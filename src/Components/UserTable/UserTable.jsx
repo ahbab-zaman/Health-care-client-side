@@ -3,15 +3,16 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const UserTable = ({ user, refetch }) => {
   const axiosSecure = useAxiosSecure();
-  const { email, name, role, image, status } = user || "";
-  const [selected, setSelected] = useState(role);
+  const { email, name, role, image, status } = user || {};
+  const [selected, setSelected] = useState("role");
+  console.log(email, name, role, image, status);
   console.log(selected);
 
-  const handleUpdate = async (event) => {
-    if (role === event) return;
+  const handleUpdate = async (selectedRole) => {
+    if (role === selectedRole) return;
     try {
       const { data } = await axiosSecure.patch(`/user/role/${email}`, {
-        role: event,
+        role: selectedRole,
       });
       console.log(data);
       refetch();
@@ -38,7 +39,7 @@ const UserTable = ({ user, refetch }) => {
       <td>{status ? status : "Unverified"}</td>
       <th className="w-[220px]">
         <select
-          onChange={() => handleUpdate(setSelected(event.target.value))}
+          onChange={(event) => handleUpdate(setSelected(event.target.value))}
           value={selected}
           className="select select-accent w-full"
         >
