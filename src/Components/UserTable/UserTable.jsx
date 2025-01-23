@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const UserTable = ({ user, refetch }) => {
@@ -17,7 +16,7 @@ const UserTable = ({ user, refetch }) => {
   return (
     <tr>
       <td>
-        <div className="flex items-center gap-3">
+        <div >
           <div className="avatar">
             <div className="mask mask-squircle h-12 w-12">
               <img src={image} alt="Avatar Tailwind CSS Component" />
@@ -40,7 +39,6 @@ const UserTable = ({ user, refetch }) => {
           <option value="admin">admin</option>
           <option value="seller">seller</option>
           <option value="user">user</option>
-          <button>Update</button>
         </select>
       </th>
     </tr>

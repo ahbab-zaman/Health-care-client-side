@@ -22,6 +22,8 @@ import AdminRoute from "./AdminRoute";
 import UpdateModal from "../Components/UpdateModal/UpdateModal";
 import SellerRoute from "./SellerRoute";
 import UserHistory from "../SharedFiles/UserLayout/UserHistory";
+import ManageBanner from "../SharedFiles/AdminLayout/ManageBanner";
+import SalesReport from "../SharedFiles/AdminLayout/SalesReport";
 
 export const router = createBrowserRouter([
   {
@@ -116,6 +118,14 @@ export const router = createBrowserRouter([
             </AdminRoute>
           </PrivateRoute>
         ),
+      },
+      {
+        path:"manageBanner",
+        element:<ManageBanner></ManageBanner>
+      },
+      {
+        path : "salesReport",
+        element:<SalesReport></SalesReport>
       },
       // Seller routes
       {

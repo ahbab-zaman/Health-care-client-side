@@ -28,7 +28,6 @@ const ManageUsers = () => {
               <tr>
                 <th>Users</th>
                 <th>Role</th>
-                <th>Status</th>
                 <th>Update Role</th>
               </tr>
             </thead>

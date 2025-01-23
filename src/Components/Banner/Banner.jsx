@@ -8,7 +8,9 @@ import banner1 from "../../assets/medicine-1.png";
 import banner2 from "../../assets/medicine-2.png";
 import banner3 from "../../assets/medicine-3.png";
 import { GoPlus } from "react-icons/go";
+import useSlider from "../../Hooks/useSlider";
 const Banner = () => {
+  const [slider] = useSlider();
   return (
     <div className="pt-6 h-[350px] bg-[#EEF7FC]">
       <Swiper
@@ -19,7 +21,33 @@ const Banner = () => {
         }}
         modules={[Scrollbar, Navigation]}
       >
-        <SwiperSlide>
+        {slider.map((item) => (
+          <SwiperSlide item={item} key={item._id}>
+            <div className="flex justify-between items-center h-[310px] px-8">
+              <div className="w-1/2 px-6 space-y-2">
+                <h4 className="text-6xl font-bold text-[#333333]">
+                 {item.description} <br />
+                  Medicine Order
+                </h4>
+                <p className="text-[#333333] font-semibold text-lg">
+                  Get the Offer Quickly
+                </p>
+                <button className="px-4 py-2 bg-[#4E97FD] font-bold text-white rounded-full flex items-center gap-1">
+                  Buy Now <GoPlus></GoPlus>
+                </button>
+              </div>
+              <div className="w-1/2">
+                <img
+                  className="w-3/4 m-auto place-items-center"
+                  src={item.image}
+                  alt=""
+                />
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+
+        {/* <SwiperSlide>
           <div className="flex justify-between items-center h-[310px] px-8">
             <div className="w-1/2 px-6 space-y-2">
               <h4 className="text-6xl font-bold text-[#333333]">
@@ -79,7 +107,7 @@ const Banner = () => {
               <img className="w-3/4 mx-auto h-310px" src={banner3} alt="" />
             </div>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
         <style>
           {`
         .swiper-button-next,

@@ -1,10 +1,16 @@
 import { BiSolidCategory } from "react-icons/bi";
-import { FaEnvelope, FaHome, FaThList, FaUserCircle, FaUsers } from "react-icons/fa";
+import {
+  FaHome,
+  FaUserCircle,
+  FaUsers,
+} from "react-icons/fa";
 import { IoMdHome } from "react-icons/io";
 import { LuLogOut } from "react-icons/lu";
-import { MdPayments, MdShoppingBag } from "react-icons/md";
+import { MdPayments } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import { RiAdvertisementFill } from "react-icons/ri";
+import { TbReportMoney } from "react-icons/tb";
 
 const AdminBar = () => {
   const { logOut } = useAuth();
@@ -67,6 +73,36 @@ const AdminBar = () => {
           {" "}
           <MdPayments></MdPayments>
           Payment
+        </NavLink>
+      </li>
+
+      <li className="mb-4 px-4">
+        <NavLink
+          to="/dashboard/manageBanner"
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#333333] bg-[#c7c7c9] font-semibold flex items-center gap-2 text-lg p-2 rounded-lg"
+              : "text-black bg-transparent flex items-center gap-2 text-lg font-semibold p-2 rounded-lg"
+          }
+        >
+          {" "}
+          <RiAdvertisementFill></RiAdvertisementFill>
+          Manage Banner
+        </NavLink>
+      </li>
+
+      <li className="mb-4 px-4">
+        <NavLink
+          to="/dashboard/salesReport"
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#333333] bg-[#c7c7c9] font-semibold flex items-center gap-2 text-lg p-2 rounded-lg"
+              : "text-black bg-transparent flex items-center gap-2 text-lg font-semibold p-2 rounded-lg"
+          }
+        >
+          {" "}
+          <TbReportMoney></TbReportMoney>
+         Sales Report
         </NavLink>
       </li>
 

@@ -7,7 +7,7 @@ const UserHistory = () => {
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
   const {
-    data: history,
+    data: history = [],
     isLoading,
     refetch,
   } = useQuery({
@@ -22,29 +22,33 @@ const UserHistory = () => {
     <div>
       <Title title="user payment history"></Title>
       <div>
-        <div className="overflow-x-auto">
-          <table className="table">
-            {/* head */}
-            <thead>
-              <tr>
-                <th>User Email</th>
-                <th>Transaction ID</th>
-                <th>Price</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {history.map((item, idx) => (
-                <tr item={item} key={item._id}>
-                  <th>{item.email}</th>
-                  <th>{item.transactionId}</th>
-                  <th>{item.price}</th>
-                  <th>{item.status}</th>
+        {history.length === 0 ? (
+          <h2 className="text-2xl font-bold h-[200px] flex justify-center items-center">No Payment History</h2>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="table">
+              {/* head */}
+              <thead>
+                <tr>
+                  <th>User Email</th>
+                  <th>Transaction ID</th>
+                  <th>Price</th>
+                  <th>Status</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {history.map((item) => (
+                  <tr item={item} key={item._id}>
+                    <th>{item.email}</th>
+                    <th>{item.transactionId}</th>
+                    <th>{item.price}</th>
+                    <th>{item.status}</th>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
     </div>
   );

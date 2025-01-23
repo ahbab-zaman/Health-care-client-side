@@ -10,7 +10,7 @@ import useMedicine from "../../Hooks/useMedicine";
 
 const CheckoutForm = () => {
   const stripe = useStripe();
-  const elements = useElements();
+const elements = useElements();
   const { user } = useAuth();
   const [clientSecret, setClientSecret] = useState("");
   const [error, setError] = useState("");
