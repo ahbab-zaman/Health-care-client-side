@@ -20,6 +20,8 @@ import PaymentHistory from "../SharedFiles/SellerLayout/PaymentHistory";
 import Advertisement from "../SharedFiles/SellerLayout/Advertisement";
 import AdminRoute from "./AdminRoute";
 import UpdateModal from "../Components/UpdateModal/UpdateModal";
+import SellerRoute from "./SellerRoute";
+import UserHistory from "../SharedFiles/UserLayout/UserHistory";
 
 export const router = createBrowserRouter([
   {
@@ -71,11 +73,23 @@ export const router = createBrowserRouter([
       // Admin routes
       {
         path: "adminHome",
-        element: <AdminHome></AdminHome>,
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <AdminHome></AdminHome>
+            </AdminRoute>
+          </PrivateRoute>
+        ),
       },
       {
         path: "manageUsers",
-        element: <ManageUsers></ManageUsers>,
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <ManageUsers></ManageUsers>
+            </AdminRoute>
+          </PrivateRoute>
+        ),
       },
       {
         path: "update/:id",
@@ -95,28 +109,59 @@ export const router = createBrowserRouter([
       },
       {
         path: "paymentManage",
-        element: <PaymentManagement></PaymentManagement>,
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <PaymentManagement></PaymentManagement>
+            </AdminRoute>
+          </PrivateRoute>
+        ),
       },
       // Seller routes
       {
         path: "sellerHome",
-        element: <SellerHome></SellerHome>,
+        element: (
+          <PrivateRoute>
+            <SellerRoute>
+              <SellerHome></SellerHome>
+            </SellerRoute>
+          </PrivateRoute>
+        ),
       },
       {
         path: "manageMedicine",
-        element: <ManageMedicine></ManageMedicine>,
+        element: (
+          <PrivateRoute>
+            <SellerRoute>
+              <ManageMedicine></ManageMedicine>
+            </SellerRoute>
+          </PrivateRoute>
+        ),
       },
       {
         path: "payHistory",
-        element: <PaymentHistory></PaymentHistory>,
+        element: (
+          <PrivateRoute>
+            <SellerRoute>
+              <PaymentHistory></PaymentHistory>
+            </SellerRoute>
+          </PrivateRoute>
+        ),
       },
       {
         path: "advertisement",
-        element: <Advertisement></Advertisement>,
+        element: (
+          <PrivateRoute>
+            <SellerRoute>
+              <Advertisement></Advertisement>
+            </SellerRoute>
+          </PrivateRoute>
+        ),
       },
       // User routes
       {
         path: "userHistory",
+        element: <UserHistory></UserHistory>,
       },
     ],
   },

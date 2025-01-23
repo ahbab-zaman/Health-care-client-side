@@ -32,7 +32,7 @@ const ManageMedicine = () => {
       generic: data.generic,
       image: res.data.data.display_url,
       description: data.description,
-      category: data.category,
+      category_name: data.category_name,
       company: data.company,
       unit: parseInt(data.unit),
       price: parseInt(data.price),
@@ -175,7 +175,7 @@ const ManageMedicine = () => {
                   <div className="flex justify-between items-center gap-3">
                     <div className="w-full">
                       <select
-                        {...register("category", { required: true })}
+                        {...register("category_name", { required: true })}
                         defaultValue={"default"}
                         className="select select-bordered rounded-full font-semibold w-full"
                       >

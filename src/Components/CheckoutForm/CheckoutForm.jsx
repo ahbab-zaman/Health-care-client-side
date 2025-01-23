@@ -5,6 +5,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useCart from "../../Hooks/useCart";
 import useAuth from "../../Hooks/useAuth";
 import { toast, Zoom } from "react-toastify";
+import useMedicine from "../../Hooks/useMedicine";
 // import Moment from "react-moment";
 
 const CheckoutForm = () => {
@@ -16,6 +17,7 @@ const CheckoutForm = () => {
   const navigate = useNavigate();
   const axiosSecure = useAxiosSecure();
   const [cart, refetch] = useCart();
+  const [medicine] = useMedicine();
   const totalPrice = cart.reduce((prev, curr) => prev + curr.price, 0);
   useEffect(() => {
     if (totalPrice > 0) {
@@ -71,7 +73,6 @@ const CheckoutForm = () => {
 
       if (paymentIntent.status === "succeeded") {
         console.log("Transaction Id", paymentIntent.id);
-
         const payment = {
           transactionId: paymentIntent.id,
           email: user?.email,
@@ -79,6 +80,7 @@ const CheckoutForm = () => {
           date: new Date(),
           ids: cart.map((item) => item._id),
           cartIds: cart.map((item) => item.cartId),
+          sellerInfo: medicine.map((item) => item.email),
           status: "pending",
         };
         const res = await axiosSecure.post("/payments", payment);
