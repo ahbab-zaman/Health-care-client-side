@@ -47,7 +47,7 @@ const UserHistory = () => {
                   <tr item={item} key={item._id}>
                     <th>{item.email}</th>
                     <th>{item.transactionId}</th>
-                    <th>{item.price}</th>
+                    <th>$ {item.price}</th>
                     <th>{item.status}</th>
                   </tr>
                 ))}

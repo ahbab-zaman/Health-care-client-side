@@ -120,12 +120,24 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path:"manageBanner",
-        element:<ManageBanner></ManageBanner>
+        path: "manageBanner",
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <ManageBanner></ManageBanner>
+            </AdminRoute>
+          </PrivateRoute>
+        ),
       },
       {
-        path : "salesReport",
-        element:<SalesReport></SalesReport>
+        path: "salesReport",
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <SalesReport></SalesReport>
+            </AdminRoute>
+          </PrivateRoute>
+        ),
       },
       // Seller routes
       {
