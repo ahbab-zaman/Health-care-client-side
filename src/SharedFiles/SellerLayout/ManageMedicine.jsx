@@ -8,6 +8,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import useAuth from "../../Hooks/useAuth";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const imageApiKey = import.meta.env.VITE_IMAGE_API;
 const imageHostingApi = `https://api.imgbb.com/1/upload?key=${imageApiKey}`;
@@ -46,7 +47,7 @@ const ManageMedicine = () => {
       if (res.data.insertedId) {
         toast("💊 New Medicine Added Successfully");
       }
-      refetch()
+      refetch();
       reset();
     });
   };
@@ -54,6 +55,9 @@ const ManageMedicine = () => {
   if (loading) return <Loading></Loading>;
   return (
     <div>
+      <Helmet>
+        <title>Dashboard | Manage Medicine</title>
+      </Helmet>
       <Title title="all medicine"></Title>
 
       <h2 className="text-4xl font-bold">Medicine: {medicine.length}</h2>

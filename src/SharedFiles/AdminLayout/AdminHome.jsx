@@ -5,6 +5,7 @@ import pay from "../../assets/pay.png";
 import pending from "../../assets/clock.png";
 import seller from "../../assets/agent.png";
 import user from "../../assets/users.png";
+import { Helmet } from "react-helmet-async";
 const AdminHome = () => {
   const axiosSecure = useAxiosSecure();
   const { data: allPendingSales = {}, isLoading } = useQuery({
@@ -27,7 +28,9 @@ const AdminHome = () => {
   return (
     <div>
       <Title title="Total Revenue"></Title>
-
+      <Helmet>
+        <title>Dashboard | Admin Home</title>
+      </Helmet>
       <div className="stats shadow w-full bg-[#f2f3f5]">
         <div className="stat">
           <div className="stat-figure text-secondary">

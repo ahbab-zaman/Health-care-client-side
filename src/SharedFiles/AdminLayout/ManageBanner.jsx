@@ -4,6 +4,7 @@ import Loading from "../../Components/Loading/Loading";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Title from "../../Components/Title/Title";
 import ToggleButtons from "../../Components/ToggleButtons/ToggleButtons";
+import { Helmet } from "react-helmet-async";
 
 const ManageBanner = () => {
   const axiosSecure = useAxiosSecure();
@@ -22,7 +23,9 @@ const ManageBanner = () => {
   return (
     <div>
       <Title title="manage banner advertise"></Title>
-
+      <Helmet>
+        <title>Dashboard | Manage Banner</title>
+      </Helmet>
       <div>
         <div className="overflow-x-auto">
           <table className="table">

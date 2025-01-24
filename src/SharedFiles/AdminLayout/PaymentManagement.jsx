@@ -3,6 +3,7 @@ import Title from "../../Components/Title/Title";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Loading from "../../Components/Loading/Loading";
 import Status from "../../Components/Status/Status";
+import { Helmet } from "react-helmet-async";
 
 const PaymentManagement = () => {
   const axiosSecure = useAxiosSecure();
@@ -23,7 +24,9 @@ const PaymentManagement = () => {
   return (
     <div>
       <Title title="title management"></Title>
-
+      <Helmet>
+        <title>Dashboard | Payment Management</title>
+      </Helmet>
       <div>
         <div className="overflow-x-auto">
           <table className="table">

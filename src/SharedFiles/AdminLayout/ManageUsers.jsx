@@ -4,6 +4,7 @@ import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Title from "../../Components/Title/Title";
 import UserTable from "../../Components/UserTable/UserTable";
+import { Helmet } from "react-helmet-async";
 
 const ManageUsers = () => {
   const axiosSecure = useAxiosSecure();
@@ -21,6 +22,9 @@ const ManageUsers = () => {
   return (
     <div>
       <Title title="Manage Users"></Title>
+      <Helmet>
+        <title>Dashboard |Manage Users</title>
+      </Helmet>
       <div>
         <div className="overflow-x-auto">
           <table className="table">

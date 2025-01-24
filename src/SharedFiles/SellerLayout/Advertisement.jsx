@@ -6,6 +6,7 @@ import { useState } from "react";
 import Title from "../../Components/Title/Title";
 import { toast } from "react-toastify";
 import Loading from "../../Components/Loading/Loading";
+import { Helmet } from "react-helmet-async";
 
 const Advertisement = () => {
   const axiosSecure = useAxiosSecure();
@@ -47,6 +48,9 @@ const Advertisement = () => {
   if (isLoading) return <Loading></Loading>;
   return (
     <div>
+      <Helmet>
+        <title>Dashboard | Advertisement</title>
+      </Helmet>
       <Title title="ask advertise banner"></Title>
       <div className="flex justify-end items-center">
         <button

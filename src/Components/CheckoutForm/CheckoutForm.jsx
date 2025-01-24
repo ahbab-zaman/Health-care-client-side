@@ -6,11 +6,11 @@ import useCart from "../../Hooks/useCart";
 import useAuth from "../../Hooks/useAuth";
 import { toast, Zoom } from "react-toastify";
 import useMedicine from "../../Hooks/useMedicine";
-// import Moment from "react-moment";
+import { format } from "date-fns";
 
 const CheckoutForm = () => {
   const stripe = useStripe();
-const elements = useElements();
+  const elements = useElements();
   const { user } = useAuth();
   const [clientSecret, setClientSecret] = useState("");
   const [error, setError] = useState("");
@@ -18,6 +18,8 @@ const elements = useElements();
   const axiosSecure = useAxiosSecure();
   const [cart, refetch] = useCart();
   const [medicine] = useMedicine();
+  const date = new Date();
+  const formattedDate = format(date, "dd.MM.yyyy");
   const totalPrice = cart.reduce((prev, curr) => prev + curr.price, 0);
   useEffect(() => {
     if (totalPrice > 0) {
@@ -77,9 +79,10 @@ const elements = useElements();
           transactionId: paymentIntent.id,
           email: user?.email,
           price: totalPrice,
-          date: new Date(),
+          date: formattedDate,
           ids: cart.map((item) => item._id),
           cartIds: cart.map((item) => item.cartId),
+          medicineName : cart.map(item => item.name),
           sellerInfo: medicine.map((item) => item.email),
           status: "pending",
         };

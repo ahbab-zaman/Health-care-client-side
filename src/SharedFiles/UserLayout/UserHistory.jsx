@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Title from "../../Components/Title/Title";
+import { Helmet } from "react-helmet-async";
 
 const UserHistory = () => {
   const axiosSecure = useAxiosSecure();
@@ -21,9 +22,14 @@ const UserHistory = () => {
   return (
     <div>
       <Title title="user payment history"></Title>
+      <Helmet>
+        <title>Dashboard | User Pay History</title>
+      </Helmet>
       <div>
         {history.length === 0 ? (
-          <h2 className="text-2xl font-bold h-[200px] flex justify-center items-center">No Payment History</h2>
+          <h2 className="text-2xl font-bold h-[200px] flex justify-center items-center">
+            No Payment History
+          </h2>
         ) : (
           <div className="overflow-x-auto">
             <table className="table">

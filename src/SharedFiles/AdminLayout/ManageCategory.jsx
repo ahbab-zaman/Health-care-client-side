@@ -8,6 +8,7 @@ import Loading from "../../Components/Loading/Loading";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const ManageCategory = () => {
   const axiosSecure = useAxiosSecure();
@@ -63,6 +64,9 @@ const ManageCategory = () => {
   return (
     <div>
       <Title title="Manage Category"></Title>
+      <Helmet>
+        <title>Dashboard | Manage Category</title>
+      </Helmet>
       <div className="flex justify-end items-center">
         <button
           onClick={() => setIsOpen(true)}
