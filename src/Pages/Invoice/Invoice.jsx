@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import domtoimage from "dom-to-image";
 import jsPDF from "jspdf";
 import "./invoice.css";
+import { Helmet } from "react-helmet-async";
 
 const Invoice = () => {
   const { user } = useAuth();
@@ -48,6 +49,9 @@ const Invoice = () => {
   };
   return (
     <>
+      <Helmet>
+        <title>Health Care | Invoice</title>
+      </Helmet>
       <div className="bg-loginBanner bg-blend-darken bg-[#00000081] lg:h-[300px] h-auto bg-cover flex flex-col gap-4 justify-center items-center">
         <div className="text-5xl font-semibold text-[#ffffffe1] space-x-4">
           <Link

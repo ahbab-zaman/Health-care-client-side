@@ -51,7 +51,7 @@ const Navbar = () => {
                       ? "bg-[#4E97FD] text-white semibold"
                       : "text-gray-500 bg-transparent"
                   }
-                  to="/"
+                  to="/shop"
                 >
                   Shop
                 </NavLink>
@@ -81,7 +81,7 @@ const Navbar = () => {
                       ? "bg-[#4E97FD] text-white"
                       : "text-gray-500 bg-transparent"
                   }
-                  to="/"
+                  to="/join"
                 >
                   Join Us
                 </NavLink>
@@ -122,34 +122,29 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <details>
-                <summary className="bg-[#4E97FD] text-white font-semibold">
-                  Languages
-                </summary>
-                <NavLink className="font-semibold">
-                  <ul className="p-2">
-                    <li>
-                      <a>English</a>
-                    </li>
-
-                    <li>
-                      <a>Bangla</a>
-                    </li>
-                  </ul>
-                </NavLink>
-              </details>
-            </li>
-            <li>
               <NavLink
                 className={({ isActive }) =>
                   isActive
                     ? "bg-[#4E97FD] text-white font-semibold"
                     : "text-gray-500 bg-transparent"
                 }
-                to="/"
+                to="/join"
               >
                 Join Us
               </NavLink>
+            </li>
+            <li>
+              <details>
+                <summary>Languages</summary>
+                <ul className="bg-base-100 rounded-t-none p-2">
+                  <li>
+                    <a>English</a>
+                  </li>
+                  <li>
+                    <a>Bangla</a>
+                  </li>
+                </ul>
+              </details>
             </li>
           </ul>
         </div>
@@ -162,10 +157,7 @@ const Navbar = () => {
             >
               <div className="w-10 rounded-full">
                 {user && user?.email ? (
-                  <img
-                    alt="User Profile"
-                    src={user?.photoURL}
-                  />
+                  <img alt="User Profile" src={user?.photoURL} />
                 ) : (
                   <img src={userImage} alt="" />
                 )}
@@ -176,9 +168,8 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <Link className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
+                <Link to="/profile" className="justify-between">
+                 Update Profile
                 </Link>
               </li>
               <li>

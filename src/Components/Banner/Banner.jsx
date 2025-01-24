@@ -23,9 +23,9 @@ const Banner = () => {
       >
         {slider.map((item) => (
           <SwiperSlide item={item} key={item._id}>
-            <div className="flex justify-between items-center h-[310px] px-8">
-              <div className="w-1/2 px-6 space-y-2">
-                <h4 className="text-6xl font-bold text-[#333333]">
+            <div className="flex lg:flex-row flex-col justify-between items-center h-[310px] px-8">
+              <div className="lg:w-1/2 w-full px-6 space-y-2">
+                <h4 className="lg:text-6xl text-3xl font-bold text-[#333333]">
                  {item.description} <br />
                   Medicine Order
                 </h4>
@@ -36,7 +36,7 @@ const Banner = () => {
                   Buy Now <GoPlus></GoPlus>
                 </button>
               </div>
-              <div className="w-1/2">
+              <div className="lg:w-1/2 w-full">
                 <img
                   className="w-3/4 m-auto place-items-center"
                   src={item.image}

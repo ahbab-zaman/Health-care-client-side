@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import useCart from "../../Hooks/useCart";
 import CartItem from "../../Components/CartItem/CartItem";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Cart = () => {
   const [cart] = useCart();
@@ -9,6 +10,9 @@ const Cart = () => {
   const [quantityPrice, setQuantityPrice] = useState(totalPrice);
   return (
     <div>
+      <Helmet>
+        <title>Health Care | Cart</title>
+      </Helmet>
       <div className="bg-loginBanner bg-blend-darken bg-[#00000081] lg:h-[300px] h-auto bg-cover flex flex-col gap-4 justify-center items-center">
         <div className="text-5xl font-semibold text-[#ffffffe1] space-x-4">
           <Link

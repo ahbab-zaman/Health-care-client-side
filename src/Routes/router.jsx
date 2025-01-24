@@ -24,10 +24,14 @@ import SellerRoute from "./SellerRoute";
 import UserHistory from "../SharedFiles/UserLayout/UserHistory";
 import ManageBanner from "../SharedFiles/AdminLayout/ManageBanner";
 import SalesReport from "../SharedFiles/AdminLayout/SalesReport";
+import Join from "../Layouts/Join/Join";
+import Profile from "../Layouts/Profile/Profile";
+import Error from "../Pages/Error/Error";
 
 export const router = createBrowserRouter([
   {
     path: "/",
+    errorElement:<Error></Error>,
     element: <MainLayout></MainLayout>,
     children: [
       {
@@ -40,7 +44,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/shop",
-        element: <Shop></Shop>,
+        element: (
+          <PrivateRoute>
+            <Shop></Shop>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/cart",
@@ -49,6 +57,14 @@ export const router = createBrowserRouter([
       {
         path: "/payment",
         element: <Payment></Payment>,
+      },
+      {
+        path: "/join",
+        element: <Join></Join>,
+      },
+      {
+        path: "/profile",
+        element: <Profile></Profile>,
       },
     ],
   },

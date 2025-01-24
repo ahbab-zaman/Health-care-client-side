@@ -60,8 +60,6 @@ const ManageMedicine = () => {
       </Helmet>
       <Title title="all medicine"></Title>
 
-      <h2 className="text-4xl font-bold">Medicine: {medicine.length}</h2>
-
       <div className="flex justify-end items-center">
         <button
           onClick={() => setIsOpen(true)}
@@ -214,7 +212,7 @@ const ManageMedicine = () => {
                     </div>
                   </div>
 
-                  <div className="flex justify-between items-center gap-3">
+                  <div className="flex lg:flex-row flex-col justify-between items-center gap-3">
                     <div className="form-control w-full">
                       <label className="label">
                         <span className="label-text font-semibold text-[#333333]">

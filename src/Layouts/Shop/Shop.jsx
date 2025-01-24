@@ -201,7 +201,7 @@ const Shop = () => {
               <img src={selectedData.image} alt="" />
               <h3 className="font-bold text-lg">{selectedData.name}</h3>
               <div className="py-2">
-                <p className="font-bold py-1 px-2 bg-[#EFEDF2] inline rounded-full text-lg text-[#4E97FD]">
+                <p className="font-bold py-1 lg:px-2 px-0 bg-[#EFEDF2] inline rounded-full l:text-lg text-sm text-[#4E97FD]">
                   {selectedData.category_name}
                 </p>
               </div>

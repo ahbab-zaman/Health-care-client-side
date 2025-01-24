@@ -13,7 +13,7 @@ const Dashboard = () => {
         <title>Dashboard</title>
       </Helmet>
       <div className="flex">
-        <div className="w-60 min-h-screen bg-[#F2F3F5] py-3">
+        <div className="lg:w-[20%] w-[40%]  min-h-screen bg-[#F2F3F5] py-3">
           <h2 className="text-center w-11/12 mx-auto text-xl p-3 shadow-xl font-bold bg-[#a1c4f54e] rounded-lg">
             Health Care
           </h2>
@@ -21,7 +21,7 @@ const Dashboard = () => {
           {role === "seller" && <SellerBar></SellerBar>}
           {role === "user" && <UserBar></UserBar>}
         </div>
-        <div className="w-3/4 mx-auto p-4">
+        <div className="lg:w-[80%] w-[60%]  mx-auto p-4">
           <Outlet></Outlet>
         </div>
       </div>
