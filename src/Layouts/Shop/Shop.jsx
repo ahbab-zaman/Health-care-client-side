@@ -1,20 +1,55 @@
 import { Link } from "react-router-dom";
-import useMedicine from "../../Hooks/useMedicine";
 import { FaRegEye } from "react-icons/fa";
 import { BiSelectMultiple } from "react-icons/bi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import dollar from "../../assets/dollars.png";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useCart from "../../Hooks/useCart";
 import { toast, Zoom } from "react-toastify";
+import Loading from "../../Components/Loading/Loading";
+import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 
 const Shop = () => {
-  const [medicine] = useMedicine();
   const [selectedData, setSelectedData] = useState(null);
+  const axiosPublic = useAxiosPublic();
   const { user } = useAuth();
   const [, refetch] = useCart();
   const axiosSecure = useAxiosSecure();
+  const [medicine, setMedicine] = useState([]);
+  const [count, setCount] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [currentPage, setCurrentPage] = useState(1);
+  const numberOfPages = Math.ceil(count / itemsPerPage);
+
+  const pages = [...Array(numberOfPages).keys()];
+  console.log(pages);
+
+  // const { data: medicine = [], isLoading } = useQuery({
+  //   queryKey: ["medicines"],
+  //   queryFn: async () => {
+  //     const { data } = await axiosPublic(
+  //       `/medicine?page=${currentPage}&size=${itemsPerPage}}`
+  //     );
+  //     refetch();
+  //     return data;
+  //   },
+  // });
+
+  useEffect(() => {
+    axiosPublic(`/medicine?page=${currentPage}&size=${itemsPerPage}}`).then(
+      (res) => {
+        setMedicine(res.data);
+      }
+    );
+  }, [currentPage, itemsPerPage]);
+  axiosPublic("/medicineCount").then((res) => {
+    setCount(res.data.count);
+    console.log(res.data.count);
+  });
+
   const handleViewDetails = (item) => {
     setSelectedData(item);
     const modal = document.getElementById("my_modal");
@@ -52,7 +87,28 @@ const Shop = () => {
       });
     }
   };
-  console.log(medicine);
+
+  const handlePagination = (e) => {
+    const val = parseInt(e.target.value);
+    setItemsPerPage(val);
+    setCurrentPage(0);
+    console.log(val);
+  };
+
+  const handlePrev = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentPage < pages.length - 1) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  // if (isLoading) return <Loading></Loading>;
+
   return (
     <div>
       <div className="bg-loginBanner bg-blend-darken bg-[#00000081] lg:h-[300px] h-auto bg-cover flex flex-col gap-4 justify-center items-center">
@@ -150,6 +206,29 @@ const Shop = () => {
             ""
           )}
         </dialog>
+      </div>
+      <div>
+        <p>Current Page : {currentPage}</p>
+
+        <button onClick={handlePrev}>
+          <GrFormPreviousLink></GrFormPreviousLink>
+        </button>
+        {pages.map((page) => (
+          <button
+            key={page}
+            onClick={() => setCurrentPage(page)}
+            className={currentPage === page ? "selected" : ""}
+          >
+            {page}
+          </button>
+        ))}
+        <button onClick={handleNext}>
+          <GrFormNextLink></GrFormNextLink>
+        </button>
+        <select value={itemsPerPage} onChange={handlePagination}>
+          <option value="5">5</option>
+          <option value="10">10</option>
+        </select>
       </div>
     </div>
   );

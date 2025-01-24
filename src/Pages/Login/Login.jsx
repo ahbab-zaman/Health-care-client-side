@@ -6,7 +6,7 @@ const Login = () => {
   const { userLogin } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  const { register, handleSubmit, rest } = useForm();
+  const { register, handleSubmit } = useForm();
   const from = location?.state?.from?.pathname || "/";
   const onSubmit = (data) => {
     userLogin(data.email, data.password)

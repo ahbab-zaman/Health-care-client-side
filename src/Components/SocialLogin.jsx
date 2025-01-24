@@ -11,11 +11,12 @@ const SocialLogin = () => {
     googleSignIn()
       .then((res) => {
         const userInfo = {
-          name: res.user.displayName,
-          image: res.user.photoURL,
-          email: res.user.email,
+          name: res.user?.displayName,
+          image: res.user?.photoURL,
+          email: res.user?.email,
           role: "user",
         };
+        console.log(userInfo)
         axiosPublic.post("/addUser", userInfo).then((res) => {
           console.log(res.data);
           navigate("/");

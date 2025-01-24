@@ -161,10 +161,10 @@ const Navbar = () => {
               className="btn btn-ghost btn-circle avatar"
             >
               <div className="w-10 rounded-full">
-                {user ? (
+                {user && user?.email ? (
                   <img
                     alt="User Profile"
-                    src={user.photoURL}
+                    src={user?.photoURL}
                   />
                 ) : (
                   <img src={userImage} alt="" />
