@@ -31,7 +31,7 @@ import Error from "../Pages/Error/Error";
 export const router = createBrowserRouter([
   {
     path: "/",
-    errorElement:<Error></Error>,
+    errorElement: <Error></Error>,
     element: <MainLayout></MainLayout>,
     children: [
       {

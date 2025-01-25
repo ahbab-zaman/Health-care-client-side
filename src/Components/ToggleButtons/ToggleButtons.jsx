@@ -6,7 +6,7 @@ const ToggleButtons = ({ item, refetch }) => {
   const handleUpdate = async (newStatus) => {
     if (status === newStatus) return;
     const { data } = await axiosSecure.patch(`/updateStatus/${_id}`, {
-      status: newStatus,
+      bannerStatus: newStatus,
     });
     console.log(data);
     refetch();

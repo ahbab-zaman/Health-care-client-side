@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import googleImg from "../assets/signIn.png";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
+import { toast } from "react-toastify";
 
 const SocialLogin = () => {
   const { googleSignIn } = useAuth();
@@ -16,10 +17,11 @@ const SocialLogin = () => {
           email: res.user?.email,
           role: "user",
         };
-        console.log(userInfo)
+        console.log(userInfo);
         axiosPublic.post("/addUser", userInfo).then((res) => {
           console.log(res.data);
           navigate("/");
+          toast("🙍🏻‍♂️ User Login Successfully");
         });
       })
       .catch((error) => {

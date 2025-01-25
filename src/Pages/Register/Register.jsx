@@ -37,7 +37,7 @@ const Register = () => {
           .then(() => {
             axiosPublic.post("/addUser", userInfo).then((res) => {
               if (res.data.insertedId) {
-                toast("User Created Successfully");
+                toast("🙍🏻‍♂️ User Created Successfully");
                 navigate("/");
               }
             });
