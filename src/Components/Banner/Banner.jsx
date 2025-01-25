@@ -46,68 +46,6 @@ const Banner = () => {
             </div>
           </SwiperSlide>
         ))}
-
-        {/* <SwiperSlide>
-          <div className="flex justify-between items-center h-[310px] px-8">
-            <div className="w-1/2 px-6 space-y-2">
-              <h4 className="text-6xl font-bold text-[#333333]">
-                Flat 25% off <br />
-                Medicine Order
-              </h4>
-              <p className="text-[#333333] font-semibold text-lg">
-                Get the Offer Quickly
-              </p>
-              <button className="px-4 py-2 bg-[#4E97FD] font-bold text-white rounded-full flex items-center gap-1">
-                Buy Now <GoPlus></GoPlus>
-              </button>
-            </div>
-            <div className="w-1/2">
-              <img
-                className="w-3/4 m-auto place-items-center"
-                src={banner1}
-                alt=""
-              />
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex items-center justify-between px-8">
-            <div className="w-1/2 px-6 space-y-2">
-              <h4 className="text-6xl font-bold text-[#333333]">
-                Flat 15% off <br />
-                Health Gadgets
-              </h4>
-              <p className="text-[#333333] font-semibold text-lg">
-                Get the Offer Quickly
-              </p>
-              <button className="px-4 py-2 bg-[#4E97FD] font-bold text-white rounded-full flex items-center gap-1">
-                Buy Now <GoPlus></GoPlus>
-              </button>
-            </div>
-            <div>
-              <img className="w-3/4 mx-auto h-[310px]" src={banner2} alt="" />
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex items-center justify-between px-8">
-            <div className="w-1/2 px-6 space-y-2">
-              <h4 className="text-6xl font-bold text-[#333333]">
-                Flat 5% off <br />
-                Fever Medicine
-              </h4>
-              <p className="text-[#333333] font-semibold text-lg">
-                Get the Offer Quickly
-              </p>
-              <button className="px-4 py-2 bg-[#4E97FD] font-bold text-white rounded-full flex items-center gap-1">
-                Buy Now <GoPlus></GoPlus>
-              </button>
-            </div>
-            <div>
-              <img className="w-3/4 mx-auto h-310px" src={banner3} alt="" />
-            </div>
-          </div>
-        </SwiperSlide> */}
         <style>
           {`
         .swiper-button-next,

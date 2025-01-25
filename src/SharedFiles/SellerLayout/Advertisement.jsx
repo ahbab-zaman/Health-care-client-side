@@ -35,7 +35,7 @@ const Advertisement = () => {
       image: image,
       description: description,
       status: "pending",
-      sellerEmail: user?.email,
+      email: user?.email,
     };
     axiosSecure.post("/addBanner", bannerInfo).then((res) => {
       if (res.data.insertedId) {

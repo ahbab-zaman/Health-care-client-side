@@ -1,12 +1,12 @@
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const ToggleButtons = ({ item, refetch }) => {
-  const { _id, status, email } = item;
+  const { _id, status } = item;
   const axiosSecure = useAxiosSecure();
   const handleUpdate = async (newStatus) => {
     if (status === newStatus) return;
     const { data } = await axiosSecure.patch(`/updateStatus/${_id}`, {
-      bannerStatus: newStatus,
+      status: newStatus,
     });
     console.log(data);
     refetch();
