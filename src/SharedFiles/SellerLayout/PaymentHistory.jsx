@@ -3,25 +3,27 @@ import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { Helmet } from "react-helmet-async";
 import Loading from "../../Components/Loading/Loading";
+import Title from "../../Components/Title/Title";
 
 const PaymentHistory = () => {
   const axiosSecure = useAxiosSecure();
-  // const { data: payment = [], isLoading } = useQuery({
-  //   queryKey: ["payment"],
-  //   queryFn: async () => {
-  //     const { data } = await axiosSecure("/sellerPayment");
-  //     console.log(data);
-  //     return data;
-  //   },
-  // });
+  const { data: payment = [], isLoading } = useQuery({
+    queryKey: ["payment"],
+    queryFn: async () => {
+      const { data } = await axiosSecure("/sellerPayment");
+      console.log(data);
+      return data;
+    },
+  });
 
-  // if (isLoading) return <Loading></Loading>;
+  if (isLoading) return <Loading></Loading>;
   return (
     <div>
       <Helmet>
         <title>Dashboard | Payment History</title>
       </Helmet>
 
+      <Title title="Seller payment history"></Title>
       <div>
         <div className="overflow-x-auto">
           <table className="table">
@@ -33,7 +35,7 @@ const PaymentHistory = () => {
                 <th>Status</th>
               </tr>
             </thead>
-            {/* <tbody>
+            <tbody>
               {payment.map((item) => (
                 <tr key={item._id} item={item}>
                   <th>{item.email}</th>
@@ -42,7 +44,7 @@ const PaymentHistory = () => {
                   <th>{item.status}</th>
                 </tr>
               ))}
-            </tbody> */}
+            </tbody>
           </table>
         </div>
       </div>
