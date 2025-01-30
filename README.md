@@ -1,10 +1,9 @@
 ## Website Name : Health Care
 
-## Admin Info
+## Description
 
-- User Name : Ahbab ahmed
-- Email : ahmed@gmail.com
-- Password : ahbab123
+This is a user friendly and fully responsive e-commerce base web application, where user can explore lot of medical equipment including medicines. 
+
 
 ## 🔗 Links
 
