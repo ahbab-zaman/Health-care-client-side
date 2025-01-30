@@ -1,16 +1,20 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo1.png";
 import userImage from "../../assets/user.png";
-import { BsCart3, BsCartPlusFill } from "react-icons/bs";
+import { BsCart3 } from "react-icons/bs";
 import { IoMenu } from "react-icons/io5";
 import useAuth from "../../Hooks/useAuth";
 import useCart from "../../Hooks/useCart";
 import useRole from "../../Hooks/useRole";
-
+import "../../i18n";
+import { useTranslation } from "react-i18next";
+import { useState } from "react";
 const Navbar = () => {
   const { user, logOut } = useAuth();
   const [cart] = useCart();
   const [role] = useRole();
+  const { i18n, t } = useTranslation();
+  const [language, setLanguage] = useState(i18n.language);
   const handleLogout = () => {
     logOut()
       .then(() => {
@@ -19,6 +23,12 @@ const Navbar = () => {
       .catch((error) => {
         console.log(error);
       });
+  };
+
+  const changeLanguage = (lng) => {
+    console.log(lng);
+    setLanguage(lng);
+    i18n.changeLanguage(lng);
   };
   return (
     <div className="w-full bg-white sticky top-0 z-10">
@@ -41,7 +51,7 @@ const Navbar = () => {
                   }
                   to="/"
                 >
-                  Home
+                  {t("home")}
                 </NavLink>
               </li>
               <li>
@@ -53,7 +63,7 @@ const Navbar = () => {
                   }
                   to="/shop"
                 >
-                  Shop
+                  {t("shop")}
                 </NavLink>
               </li>
               <li>
@@ -83,7 +93,7 @@ const Navbar = () => {
                   }
                   to="/join"
                 >
-                  Join Us
+                 {t("shop")}
                 </NavLink>
               </li>
             </ul>
@@ -91,7 +101,7 @@ const Navbar = () => {
           <Link to="/">
             <div className="flex items-center gap-1">
               <img className="w-8" src={logo} alt="" />
-              <h2 className="text-xl font-bold">HealthCare</h2>
+              <h2 className="text-xl font-bold">{t("logo")}</h2>
             </div>
           </Link>
         </div>
@@ -106,7 +116,7 @@ const Navbar = () => {
                 }
                 to="/"
               >
-                Home
+                {t("home")}
               </NavLink>
             </li>
             <li>
@@ -118,7 +128,7 @@ const Navbar = () => {
                 }
                 to="/shop"
               >
-                Shop
+                {t("shop")}
               </NavLink>
             </li>
             <li>
@@ -130,21 +140,18 @@ const Navbar = () => {
                 }
                 to="/join"
               >
-                Join Us
+                {t("join")}
               </NavLink>
             </li>
             <li>
-              <details>
-                <summary>Languages</summary>
-                <ul className="bg-base-100 rounded-t-none p-2">
-                  <li>
-                    <a>English</a>
-                  </li>
-                  <li>
-                    <a>Bangla</a>
-                  </li>
-                </ul>
-              </details>
+              <select
+                value={language}
+                onChange={(e) => changeLanguage(e.target.value)}
+                className="bg-base-100 rounded-t-none p-2"
+              >
+                <option value="en">English</option>
+                <option value="bn">বাংলা</option>
+              </select>
             </li>
           </ul>
         </div>
@@ -169,23 +176,23 @@ const Navbar = () => {
             >
               <li>
                 <Link to="/profile" className="justify-between">
-                 Update Profile
+                {t("profile")}
                 </Link>
               </li>
               <li>
                 {role === "admin" && (
-                  <Link to="/dashboard/adminHome">Dashboard</Link>
+                  <Link to="/dashboard/adminHome">{t("dashboard")}</Link>
                 )}
                 {role === "seller" && (
-                  <Link to="/dashboard/sellerHome">Dashboard</Link>
+                  <Link to="/dashboard/sellerHome">{t("dashboard")}</Link>
                 )}
                 {role === "user" && (
-                  <Link to="/dashboard/userHistory">Dashboard</Link>
+                  <Link to="/dashboard/userHistory">{t("dashboard")}</Link>
                 )}
               </li>
               {user ? (
                 <li onClick={handleLogout}>
-                  <Link to="/login">Logout</Link>
+                  <Link to="/login">{t("logout")}</Link>
                 </li>
               ) : (
                 ""
