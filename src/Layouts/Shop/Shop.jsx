@@ -108,8 +108,8 @@ const Shop = () => {
       <Helmet>
         <title>Health Care | Shop</title>
       </Helmet>
-      <div className="bg-loginBanner bg-blend-darken bg-[#00000081] lg:h-[300px] h-auto bg-cover flex flex-col gap-4 justify-center items-center">
-        <div className="text-5xl font-semibold text-[#ffffffe1] space-x-4">
+      <div className="bg-loginBanner bg-blend-darken bg-[#00000081] bg-no-repeat lg:h-[300px] h-[100px] bg-cover flex flex-col gap-4 justify-center items-center">
+        <div className="lg:text-5xl text-2xl font-semibold text-[#ffffffe1] space-x-4">
           <Link
             to="/"
             className="hover:text-[#4E97FD] hover:transition-colors hover:duration-300"
@@ -126,7 +126,7 @@ const Shop = () => {
         </div>
       </div>
 
-      <div className="w-11/12 mx-auto mt-6 flex justify-between">
+      <div className="w-11/12 mx-auto mt-6 flex lg:flex-row flex-col gap-4 justify-between">
         <div>
           <label className="input input-bordered flex items-center gap-2">
             <input

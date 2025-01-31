@@ -93,15 +93,15 @@ const Navbar = () => {
                   }
                   to="/join"
                 >
-                 {t("shop")}
+                 {t("join")}
                 </NavLink>
               </li>
             </ul>
           </div>
           <Link to="/">
             <div className="flex items-center gap-1">
-              <img className="w-8" src={logo} alt="" />
-              <h2 className="text-xl font-bold">{t("logo")}</h2>
+              <img className="w-8 lg:flex hidden" src={logo} alt="" />
+              <h2 className="lg:text-xl text-lg font-bold">{t("logo")}</h2>
             </div>
           </Link>
         </div>

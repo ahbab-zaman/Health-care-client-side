@@ -52,8 +52,8 @@ const Register = () => {
   };
   return (
     <div>
-      <div className="bg-loginBanner bg-blend-darken bg-[#00000081] lg:h-[300px] h-auto bg-cover flex flex-col gap-4 justify-center items-center">
-        <div className="text-5xl font-semibold text-[#ffffffe1] space-x-4">
+      <div className="bg-loginBanner bg-blend-darken bg-[#00000081] lg:h-[300px] h-[100px] bg-cover flex flex-col gap-4 justify-center items-center">
+        <div className="lg:text-5xl text-2xl font-semibold text-[#ffffffe1] space-x-4">
           <Link
             to="/"
             className="hover:text-[#4E97FD] hover:transition-colors hover:duration-300"
@@ -69,7 +69,7 @@ const Register = () => {
           </Link>
         </div>
       </div>
-      <div className="bg-[#EEF7FC] w-3/4 mx-auto p-6 my-12">
+      <div className="bg-[#EEF7FC] lg:w-3/4 w-full mx-auto p-6 my-12">
         <h1 className="text-3xl font-semibold text-center">Sign Up</h1>
         <div>
           <p className="text-[#333333] font-light py-4 text-center">
@@ -80,10 +80,10 @@ const Register = () => {
           </p>
         </div>
         <div>
-          <div className="hero">
-            <div className="hero-content w-[100%]">
-              <div className="card w-full">
-                <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
+          <div className="hero justify-center items-center">
+            <div className="hero-content w-11/12 mx-auto">
+              <div className="card justify-center w-full">
+                <form className="card-body w-full" onSubmit={handleSubmit(onSubmit)}>
                   <div className="form-control">
                     <label className="label">
                       <span className="label-text font-semibold text-[#333333]">
@@ -129,7 +129,7 @@ const Register = () => {
                     />
                   </div>
 
-                  <div className="flex justify-between items-center mt-6 gap-4">
+                  <div className="flex lg:flex-row flex-col justify-between items-center mt-6 gap-4">
                     <div className="w-full">
                       <select
                         {...register("role", { required: true })}
@@ -153,7 +153,7 @@ const Register = () => {
                   </div>
 
                   <div className="form-control mt-6">
-                    <button className="px-4 py-3 bg-[#4E97FD] text-[#fff] font-bold w-[15%] m-auto">
+                    <button className="px-4 py-3 bg-[#4E97FD] text-[#fff] font-bold lg:w-[15%] w-[50%] m-auto">
                       Register
                     </button>
                   </div>

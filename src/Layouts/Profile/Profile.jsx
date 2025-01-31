@@ -34,8 +34,8 @@ const Profile = () => {
       <Helmet>
         <title>Update Profile</title>
       </Helmet>
-      <section className="bg-loginBanner bg-blend-darken bg-[#00000081] lg:h-[300px] h-auto bg-cover flex flex-col gap-4 justify-center items-center">
-        <div className="text-5xl font-semibold text-[#ffffffe1] space-x-4">
+      <section className="bg-loginBanner bg-blend-darken bg-[#00000081] lg:h-[300px] h-[100px] bg-cover flex flex-col gap-4 justify-center items-center">
+        <div className="lg:text-5xl text-2xl font-semibold text-[#ffffffe1] space-x-4">
           <Link
             to="/"
             className="hover:text-[#4E97FD] hover:transition-colors hover:duration-300"
@@ -52,7 +52,7 @@ const Profile = () => {
         </div>
       </section>
 
-      <section className="w-3/4 mx-auto border border-blue-500 rounded-xl my-12 pt-4 pb-12 bg-[#f2f3f5] text-center space-y-4">
+      <section className="lg:w-3/4 w-11/12 mx-auto border border-blue-500 rounded-xl my-12 pt-4 pb-12 bg-[#f2f3f5] text-center space-y-4">
         <div className="flex justify-center items-center relative">
           <img
             className="w-40 h-40 rounded-full border-8 border-white"

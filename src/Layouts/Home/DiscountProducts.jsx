@@ -13,7 +13,10 @@ const DiscountProducts = () => {
 
       <div className="py-12 w-11/12 mx-auto">
         <Swiper
-          slidesPerView={3}
+          breakpoints={{
+            768: { slidesPerView: 3 },
+            0: { slidesPerView: 1 },
+          }}
           spaceBetween={30}
           freeMode={true}
           modules={[FreeMode]}

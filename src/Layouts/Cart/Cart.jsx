@@ -13,8 +13,8 @@ const Cart = () => {
       <Helmet>
         <title>Health Care | Cart</title>
       </Helmet>
-      <div className="bg-loginBanner bg-blend-darken bg-[#00000081] lg:h-[300px] h-auto bg-cover flex flex-col gap-4 justify-center items-center">
-        <div className="text-5xl font-semibold text-[#ffffffe1] space-x-4">
+      <div className="bg-loginBanner bg-blend-darken bg-[#00000081] lg:h-[300px] h-[100px] bg-cover flex flex-col gap-4 justify-center items-center">
+        <div className="lg:text-5xl text-2xl font-semibold text-[#ffffffe1] space-x-4">
           <Link
             to="/"
             className="hover:text-[#4E97FD] hover:transition-colors hover:duration-300"
@@ -33,8 +33,8 @@ const Cart = () => {
       {cart.length === 0 ? (
         <h2 className="text-2xl font-bold text-center py-12 text-[#333333]">No Item Added to the Cart </h2>
       ) : (
-        <div className="flex justify-center items-start gap-4 w-11/12 mx-auto my-6 px-4 py-4">
-          <div className="w-3/4 flex flex-col justify-center gap-8">
+        <div className="flex lg:flex-row flex-col justify-center items-start lg:gap-4 gap-12 w-11/12 mx-auto my-6 px-4 py-4">
+          <div className="lg:w-3/4 w-full mx-auto flex flex-col justify-center gap-8">
             {cart.map((item) => (
               <CartItem
                 item={item}
@@ -44,7 +44,8 @@ const Cart = () => {
               ></CartItem>
             ))}
           </div>
-          <div className="w-1/4 bg-[#F8F8F8] py-12 px-6">
+
+          <div className="lg:w-1/4 w-full mx-auto bg-[#F8F8F8] py-12 px-6">
             <h4 className="text-xl font-bold">Cart Total</h4>
             <div className="divider"></div>
             <div className="flex justify-between items-center">
