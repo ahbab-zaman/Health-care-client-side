@@ -1,28 +1,53 @@
 # Health Care
 
-This is a user-friendly and fully responsive e-commerce-based web application where users can explore a variety of medical equipment, including medicines.
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://health-care-f14b8.firebaseapp.com)
 
-## 🔗 Links
+## 📌 Introduction
 
-[Health Care](https://health-care-f14b8.firebaseapp.com)
+**Health Care** is a user-friendly and fully responsive e-commerce-based web application where users can explore a variety of medical equipment, including medicines. The platform offers convenient features for shopping, managing carts, processing payments, and filtering products.
 
-## Features
+---
 
-- Implemented authentication using Firebase
-- Add to Cart functionality
-- Fully Responsive design
-- Payment method integrated with Stripe
-- Search functionality
-- Date range filter method
-- Sort products by price
-- Pagination
-- Admin panel
-- Dynamic Dashboard
-- Access Token using local storage
+## 📖 Table of Contents
 
-## Project Configuration
+- [Live Demo](#-live-demo)
+- [Features](#-features)
+- [Project Configuration](#-project-configuration)
+- [Installation](#-installation)
+- [Dependencies](#-dependencies)
+- [Dev Dependencies](#-dev-dependencies)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+---
+
+## 🚀 Live Demo
+
+🔗 **[Visit Health Care](https://health-care-f14b8.firebaseapp.com)**  
+
+---
+
+## ✨ Features
+
+- 🔑 **Authentication** – Implemented authentication using Firebase for secure user sign-up and login.
+- 🛒 **Add to Cart** – Allows users to add medical products to their cart.
+- 📱 **Fully Responsive** – Designed to work seamlessly across devices.
+- 💳 **Stripe Payment Integration** – Integrated payment system for safe and easy transactions.
+- 🔍 **Search Functionality** – Find medical products by name, category, or other attributes.
+- 📅 **Date Range Filter** – Filter products based on the available date range.
+- 💵 **Sort by Price** – Sort medical products based on price.
+- 🔢 **Pagination** – Easily navigate through large product lists.
+- 🛠️ **Admin Panel** – Admin can manage users, products, and more.
+- 📊 **Dynamic Dashboard** – Admin dashboard with dynamic statistics and reports.
+- 🔑 **Access Token via Local Storage** – Ensures secure token management for users.
+
+---
+
+## 🔧 Project Configuration
 
 ### Environment Variables:
+
+To set up the environment for the application, use the following variables in your `.env` file:
 
 ```bash
 VITE_apiKey=YOUR_FIREBASE_API_KEY
@@ -32,8 +57,13 @@ VITE_storageBucket=YOUR_FIREBASE_STORAGE_BUCKET
 VITE_messagingSenderId=YOUR_FIREBASE_MESSAGING_SENDER_ID
 VITE_appId=YOUR_FIREBASE_APP_ID
 
-```
+⚙️ Installation
 
+git clone https://github.com/your-username/health-care.git
+cd health-care
+
+
+# Dependencies
 "dependencies": {
   "@headlessui/react": "^2.2.0",
   "@stripe/react-stripe-js": "^3.1.1",
@@ -65,9 +95,9 @@ VITE_appId=YOUR_FIREBASE_APP_ID
   "sort-by": "^1.2.0",
   "sweetalert2": "^11.15.10",
   "swiper": "^11.2.1"
-},
+}
 
-
+# Dev Dependencies
 "devDependencies": {
   "@eslint/js": "^9.17.0",
   "@storybook/react-vite": "^8.5.0",
@@ -85,14 +115,3 @@ VITE_appId=YOUR_FIREBASE_APP_ID
   "tailwindcss": "^3.3.3",
   "vite": "^6.0.5"
 }
-
-
-git clone https://github.com/your-username/health-care.git
-cd health-care
-npm install
-npm run dev
-
-
-
-This `README.md` file includes all the necessary sections and provides a clean structure for understanding the project's setup, features, and dependencies. You can customize it further based on your preferences or specific project requirements!
-
