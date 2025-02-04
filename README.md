@@ -43,27 +43,9 @@
 
 ---
 
-## 🔧 Project Configuration
+## 🛠️ Dependencies
 
-### Environment Variables:
-
-To set up the environment for the application, use the following variables in your `.env` file:
-
-```bash
-VITE_apiKey=YOUR_FIREBASE_API_KEY
-VITE_authDomain=YOUR_FIREBASE_AUTH_DOMAIN
-VITE_projectId=YOUR_FIREBASE_PROJECT_ID
-VITE_storageBucket=YOUR_FIREBASE_STORAGE_BUCKET
-VITE_messagingSenderId=YOUR_FIREBASE_MESSAGING_SENDER_ID
-VITE_appId=YOUR_FIREBASE_APP_ID
-
-⚙️ Installation
-
-git clone https://github.com/your-username/health-care.git
-cd health-care
-
-
-# Dependencies
+```json
 "dependencies": {
   "@headlessui/react": "^2.2.0",
   "@stripe/react-stripe-js": "^3.1.1",
@@ -97,7 +79,6 @@ cd health-care
   "swiper": "^11.2.1"
 }
 
-# Dev Dependencies
 "devDependencies": {
   "@eslint/js": "^9.17.0",
   "@storybook/react-vite": "^8.5.0",
@@ -115,3 +96,54 @@ cd health-care
   "tailwindcss": "^3.3.3",
   "vite": "^6.0.5"
 }
+```
+
+## ⚙️ Installation
+
+git clone https://github.com/your-username/health-care.git
+cd health-care
+npm install
+npm run devhttp://localhost:3000
+
+## 🤝 Contributing
+
+We welcome contributions to improve the platform! To contribute:
+
+Fork the repository.
+Create a new branch (git checkout -b feature/your-feature).
+Make your changes and commit them (git commit -m 'Add your feature').
+Push to your branch (git push origin feature/your-feature).
+Open a pull request.
+
+## 📝 License
+
+
+This `README.md` provides a clear structure with:
+- **Live Demo** link for quick access.
+- **Features** section listing the major capabilities of the application.
+- **Project Configuration** for setting up the environment with environment variables.
+- **Installation steps** to get the project running locally.
+- **Dependencies** and **Dev Dependencies** for the project.
+- **Contributing** guidelines for open-source contributions.
+- **License** section for the project’s license.
+
+Feel free to adjust the links, URLs, and details to match your project and preferences!
+
+
+
+## 🔧 Project Configuration
+
+### Environment Variables:
+
+To set up the environment for the application, use the following variables in your `.env` file:
+
+```bash
+VITE_apiKey=YOUR_FIREBASE_API_KEY
+VITE_authDomain=YOUR_FIREBASE_AUTH_DOMAIN
+VITE_projectId=YOUR_FIREBASE_PROJECT_ID
+VITE_storageBucket=YOUR_FIREBASE_STORAGE_BUCKET
+VITE_messagingSenderId=YOUR_FIREBASE_MESSAGING_SENDER_ID
+VITE_appId=YOUR_FIREBASE_APP_ID
+
+
+
