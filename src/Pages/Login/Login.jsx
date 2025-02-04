@@ -51,10 +51,10 @@ const Login = () => {
           </p>
         </div>
         <div>
-          <div className="hero justify-center items-center">
+          <div className="hero">
             <div className="hero-content w-11/12 mx-auto">
-              <div className="card justify-center w-full">
-                <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
+              <div className="card w-full">
+                <form className="card-body w-full" onSubmit={handleSubmit(onSubmit)}>
                   <div className="form-control">
                     <label className="label">
                       <span className="label-text font-semibold text-[#333333]">

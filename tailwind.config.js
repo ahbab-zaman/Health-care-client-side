@@ -6,6 +6,7 @@ export default {
       backgroundImage: {
         loginBanner: "url('./assets/loginBanner.jpg')",
         dealBg: "url('./assets/deal-bg.jpg')",
+        joinBg: "url('./assets/join.jpg')",
       },
       colors: {
         customBlue: "#4E97FD",
