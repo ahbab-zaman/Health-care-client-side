@@ -23,7 +23,7 @@
 
 ## 🚀 Live Demo
 
-🔗 **[Visit Health Care](https://health-care-f14b8.firebaseapp.com)**  
+🔗 **[Visit Health Care](https://health-care-f14b8.firebaseapp.com)**
 
 ---
 
@@ -117,8 +117,8 @@ Open a pull request.
 
 ## 📝 License
 
-
 This `README.md` provides a clear structure with:
+
 - **Live Demo** link for quick access.
 - **Features** section listing the major capabilities of the application.
 - **Project Configuration** for setting up the environment with environment variables.
@@ -128,8 +128,6 @@ This `README.md` provides a clear structure with:
 - **License** section for the project’s license.
 
 Feel free to adjust the links, URLs, and details to match your project and preferences!
-
-
 
 ## 🔧 Project Configuration
 
@@ -147,3 +145,4 @@ VITE_appId=YOUR_FIREBASE_APP_ID
 
 
 
+```
