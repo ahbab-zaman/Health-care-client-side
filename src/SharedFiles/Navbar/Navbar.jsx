@@ -228,7 +228,7 @@ const Navbar = () => {
           <Link to="/cart">
             <button class="px-4 py-3 rounded-2xl flex items-center gap-1 relative z-10">
               <BsCart3 className="text-[#4E97FD] text-xl font-semibold"></BsCart3>
-              <div class="px-[5px] rounded-full text-black font-bold text-sm absolute bottom-5 -right-1">
+              <div class="px-[5px] rounded-full dark:text-white font-bold text-sm absolute bottom-5 -right-1">
                 {cart.length}
               </div>
             </button>

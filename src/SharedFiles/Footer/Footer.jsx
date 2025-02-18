@@ -1,7 +1,7 @@
 import logo from "../../assets/healthlogo.png"
 const Footer = () => {
   return (
-  <footer className="footer dark:bg-[#F2F3F5] border-t p-10">
+<footer className="footer dark:bg-[#F2F3F5] border-t p-10">
       <aside>
         <img className="w-20" src={logo} alt="" />
         <p>
