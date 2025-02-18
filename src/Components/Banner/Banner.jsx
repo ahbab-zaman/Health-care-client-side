@@ -8,7 +8,7 @@ import useSlider from "../../Hooks/useSlider";
 const Banner = () => {
   const [slider] = useSlider();
   return (
-    <div className="pt-6 h-[350px] bg-base-100 shadow-md">
+    <div className="pt-6 h-[350px] bg-base-100">
       <Swiper
         navigation={true}
         autoplay={true}
@@ -23,7 +23,7 @@ const Banner = () => {
                   {item.description} <br />
                   Medicine Order
                 </h4>
-                <p className="text-[#333333] dark:text-white font-semibold text-lg">
+                <p className="dark:text-white font-semibold text-lg">
                   Get the Offer Quickly
                 </p>
                 <button className="px-4 py-2 bg-[#4E97FD] font-bold text-white rounded-full flex items-center gap-1">

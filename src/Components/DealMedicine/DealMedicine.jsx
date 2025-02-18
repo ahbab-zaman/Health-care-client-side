@@ -36,7 +36,7 @@ const DealMedicine = () => {
     );
   };
   return (
-    <div className="w-11/12 mx-auto my-6 px-8 bg-dealBg bg-center bg-no-repeat bg-cover lg:h-[500px] h-auto flex lg:flex-row flex-col justify-center gap-3 items-center">
+    <div className="w-11/12 bg-base-100 mx-auto my-6 px-8 bg-dealBg bg-center bg-no-repeat bg-cover lg:h-[500px] h-auto flex lg:flex-row flex-col justify-center gap-3 items-center">
       <div className="lg:w-1/2 w-full lg:pl-8 pl-0 lg:py-0 py-6 space-y-3">
         <h3 className="text-3xl font-semibold text-[#333333] capitalize">
           deal of this week
