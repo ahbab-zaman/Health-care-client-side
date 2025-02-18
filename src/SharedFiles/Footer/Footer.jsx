@@ -1,9 +1,9 @@
-import logo from "../../assets/logo1.png"
+import logo from "../../assets/healthlogo.png"
 const Footer = () => {
   return (
     <footer className="footer bg-[#F2F3F5] border-t p-10">
       <aside>
-        <img src={logo} alt="" />
+        <img className="w-20" src={logo} alt="" />
         <p>
          Health Care LTD.
           <br />
