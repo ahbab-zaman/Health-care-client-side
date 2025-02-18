@@ -11,10 +11,8 @@ export default {
       colors: {
         customBlue: "#4E97FD",
       },
-      daisyui: {
-        themes: ["light", "dark"],
-      },
     },
   },
   plugins: [require("daisyui")],
+  darkMode:"class"
 };

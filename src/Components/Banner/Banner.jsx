@@ -8,17 +8,22 @@ import useSlider from "../../Hooks/useSlider";
 const Banner = () => {
   const [slider] = useSlider();
   return (
-    <div className="pt-6 h-[350px] bg-[#EEF7FC]">
-      <Swiper navigation={true} autoplay={true} className="mySwiper" modules={[Navigation, Autoplay]}>
+    <div className="pt-6 h-[350px] bg-base-100 shadow-md">
+      <Swiper
+        navigation={true}
+        autoplay={true}
+        className="mySwiper"
+        modules={[Navigation, Autoplay]}
+      >
         {slider.map((item) => (
           <SwiperSlide item={item} key={item._id}>
             <div className="flex lg:flex-row flex-col justify-between items-center h-[310px] px-8">
               <div className="lg:w-1/2 w-full px-6 space-y-2">
-                <h4 className="lg:text-6xl text-3xl font-bold text-[#333333]">
+                <h4 className="lg:text-6xl text-3xl font-bold dark:text-white">
                   {item.description} <br />
                   Medicine Order
                 </h4>
-                <p className="text-[#333333] font-semibold text-lg">
+                <p className="text-[#333333] dark:text-white font-semibold text-lg">
                   Get the Offer Quickly
                 </p>
                 <button className="px-4 py-2 bg-[#4E97FD] font-bold text-white rounded-full flex items-center gap-1">

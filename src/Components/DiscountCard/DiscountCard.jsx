@@ -1,6 +1,6 @@
 const DiscountCard = ({ image, title, discountPrice, basePrice, coupon }) => {
   return (
-    <div className="relative bg-[#F8F8F8] flex flex-col justify-center items-center h-[375px]">
+    <div className="relative dark:bg-[#222] flex flex-col justify-center items-center h-[375px] outline outline-1 dark:outline-white rounded">
       <p className="absolute top-8 left-6 bg-[#E4573D] text-[#fff] font-semibold w-14 mx-auto px-2 py-1 rounded-md">
         -{coupon}%
       </p>

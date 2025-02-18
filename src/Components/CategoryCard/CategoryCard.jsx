@@ -1,6 +1,6 @@
 const CategoryCard = ({ image, category, number }) => {
   return (
-    <div className="flex justify-center items-center gap-4 bg-[#EDF7F9] p-2 transform transition-transform hover:duration-300 hover:scale-105">
+    <div className="flex justify-center items-center gap-4  p-2 transform transition-transform hover:duration-300 hover:scale-105 outline outline-1 rounded">
       <div>
         <img className="w-[150px] h-[150px]" src={image} alt="" />
       </div>
