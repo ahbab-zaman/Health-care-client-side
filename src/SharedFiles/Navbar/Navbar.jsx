@@ -31,7 +31,7 @@ const Navbar = () => {
     i18n.changeLanguage(lng);
   };
   return (
-    <div className="w-full bg-base-100 sticky top-0 z-10">
+    <div className="w-full bg-base-100 sticky top-0 z-40">
       <div className="navbar w-11/12 mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -84,18 +84,6 @@ const Navbar = () => {
                   </NavLink>
                 </details>
               </li>
-              <li>
-                <NavLink
-                  className={({ isActive }) =>
-                    isActive
-                      ? "bg-[#4E97FD] text-white"
-                      : "text-gray-500 bg-transparent"
-                  }
-                  to="/join"
-                >
-                  {t("join")}
-                </NavLink>
-              </li>
             </ul>
           </div>
           <Link to="/">
@@ -131,18 +119,6 @@ const Navbar = () => {
                 to="/shop"
               >
                 {t("shop")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "bg-[#4E97FD] text-white font-semibold"
-                    : "text-gray-500 bg-transparent"
-                }
-                to="/join"
-              >
-                {t("join")}
               </NavLink>
             </li>
             <li>

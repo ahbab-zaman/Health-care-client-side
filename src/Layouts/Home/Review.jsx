@@ -1,6 +1,5 @@
 import test from "../../assets/test.png";
 import client from "../../assets/04.png";
-import Title from "../../Components/Title/Title";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -8,7 +7,6 @@ import { Autoplay } from "swiper/modules";
 const Review = () => {
   return (
     <div className="py-12 w-11/12 mx-auto">
-      {/* <Title title="What our client says"></Title> */}
       <div className="flex items-center lg:flex-row flex-col">
         
         <div className="lg:w-1/2 w-full">

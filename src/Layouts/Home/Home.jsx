@@ -5,6 +5,8 @@ import Category from "./Category";
 import DiscountProducts from "./DiscountProducts";
 import TopBrands from "./TopBrands";
 import Review from "./Review";
+import Contact from "./Contact";
+import Join from "../Join/Join";
 
 const Home = () => {
   return (
@@ -20,6 +22,8 @@ const Home = () => {
       <DealMedicine></DealMedicine>
       <Review></Review>
       <TopBrands></TopBrands>
+      <Contact></Contact>
+      <Join></Join>
     </div>
   );
 };

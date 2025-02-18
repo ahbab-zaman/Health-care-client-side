@@ -8,6 +8,7 @@ import dollar from "../../assets/dollars.png";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { toast, Zoom } from "react-toastify";
+import TableCard from "./TableCard";
 const Table = () => {
   const [selectedData, setSelectedData] = useState(null);
   const { category } = useParams();
@@ -53,60 +54,25 @@ const Table = () => {
             theme: "light",
             transition: Zoom,
           });
+          refetch();
         }
-        refetch();
       });
     }
   };
 
   return (
     <div>
-      <div className="overflow-x-auto px-8">
-        <table className="table">
-          <thead>
-            <tr className="text-lg">
-              <th></th>
-              <th>Image</th>
-              <th>Name</th>
-              <th>Category</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {medicineCategory.map((item, idx) => (
-              <tr
-                item={item}
-                key={item._id}
-                className="hover:bg-gray-200 hover:transition-all hover:duration-300"
-              >
-                <th>{idx + 1}</th>
-                <td>
-                  <img className="w-11" src={item.image} alt="" />
-                </td>
-                <td>
-                  <p className="font-bold p-1 px-2 text-[#EFEDF2] inline rounded-full text-sm bg-[#4E97FD]">
-                    {item.name}
-                  </p>
-                </td>
-                <td>
-                  <p className="font-bold p-1 px-2 bg-[#EFEDF2] inline rounded-full text-sm text-[#4E97FD]">
-                    {item.category_name}
-                  </p>
-                </td>
-                <td onClick={() => handleViewDetails(item)}>
-                  <p>
-                    <FaRegEye className="text-xl transform transition-transform duration-300 hover:scale-125"></FaRegEye>
-                  </p>
-                </td>
-                <td onClick={() => handleAddToCart(item)}>
-                  <p>
-                    <BiSelectMultiple className="text-xl transform transition-transform duration-300 hover:scale-125"></BiSelectMultiple>
-                  </p>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="py-8">
+        <div className="flex lg:flex-row flex-col justify-around items-center gap-4">
+          {medicineCategory.map((item) => (
+            <TableCard
+              key={item._id}
+              item={item}
+              handleViewDetails={handleViewDetails}
+              handleAddToCart={handleAddToCart}
+            ></TableCard>
+          ))}
+        </div>
         <dialog id="my_modal" className="modal modal-bottom sm:modal-middle">
           {selectedData ? (
             <div className="modal-box">

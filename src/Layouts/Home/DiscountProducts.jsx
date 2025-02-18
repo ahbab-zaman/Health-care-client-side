@@ -1,28 +1,18 @@
 import Title from "../../Components/Title/Title";
 import DiscountCard from "../../Components/DiscountCard/DiscountCard";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import { FreeMode } from "swiper/modules";
 import img1 from "../../assets/img1.webp";
+import Marquee from "react-fast-marquee";
 const DiscountProducts = () => {
   return (
     <div>
       <Title title="Discount Products"></Title>
 
       <div className="py-12 w-11/12 mx-auto">
-        <Swiper
-          breakpoints={{
-            768: { slidesPerView: 3 },
-            0: { slidesPerView: 1 },
-          }}
-          spaceBetween={30}
-          freeMode={true}
-          modules={[FreeMode]}
-          className="mySwiper"
-        >
-          <SwiperSlide className="p-3">
+        <Marquee>
+          <div className="p-3">
             <DiscountCard
               image={img1}
               title="Napa Pain killer"
@@ -30,9 +20,9 @@ const DiscountProducts = () => {
               basePrice={43}
               coupon={12}
             ></DiscountCard>
-          </SwiperSlide>
+          </div>
 
-          <SwiperSlide className="p-3">
+          <div className="p-3">
             <DiscountCard
               image="https://img.drz.lazcdn.com/static/bd/p/61286d4d03ed0cb956f7fa4a47790e15.jpg_400x400q75.jpg_.webp"
               title="Blood Pressure Monitor"
@@ -40,9 +30,9 @@ const DiscountProducts = () => {
               basePrice={92.0}
               coupon={7}
             ></DiscountCard>
-          </SwiperSlide>
+          </div>
 
-          <SwiperSlide className="p-3">
+          <div className="p-3">
             <DiscountCard
               image="https://img.drz.lazcdn.com/g/kf/S893f99a2753d46dda9b35a9f62159bb11.jpg_400x400q75.jpg_.webp"
               title="Digital Thermometer"
@@ -50,9 +40,8 @@ const DiscountProducts = () => {
               basePrice={43}
               coupon={12}
             ></DiscountCard>
-          </SwiperSlide>
-
-          <SwiperSlide className="p-3">
+          </div>
+          <div className="p-3">
             <DiscountCard
               image="https://img.drz.lazcdn.com/static/bd/p/2fdd662d3e4d4c0532e6b1bd3bde33a6.jpg_400x400q75.jpg_.webp"
               title="Cough Syrup"
@@ -60,9 +49,9 @@ const DiscountProducts = () => {
               basePrice={17}
               coupon={5}
             ></DiscountCard>
-          </SwiperSlide>
+          </div>
 
-          <SwiperSlide className="p-3">
+          <div className="p-3">
             <DiscountCard
               image="https://img.drz.lazcdn.com/g/kf/S59da417677dc45318a9dbe04cb82c533s.jpg_400x400q75.jpg_.webp"
               title="Hand Sanitizer"
@@ -70,9 +59,9 @@ const DiscountProducts = () => {
               basePrice={29}
               coupon={17}
             ></DiscountCard>
-          </SwiperSlide>
+          </div>
 
-          <SwiperSlide className="p-3">
+          <div>
             <DiscountCard
               image="https://img.drz.lazcdn.com/static/bd/p/3b8a3dfb028bdd88222410e40352aa9d.jpg_400x400q75.jpg_.webp"
               title="N95 Face Mask"
@@ -80,9 +69,9 @@ const DiscountProducts = () => {
               basePrice={15.4}
               coupon={6}
             ></DiscountCard>
-          </SwiperSlide>
+          </div>
 
-          <SwiperSlide className="p-3">
+          <div className="p-3">
             <DiscountCard
               image="https://img.drz.lazcdn.com/static/bd/p/ef5e47ef1c2b9b33bfab601c227dd107.jpg_400x400q75.jpg_.webp"
               title="Glucose Monitoring Kit"
@@ -90,9 +79,9 @@ const DiscountProducts = () => {
               basePrice={98}
               coupon={12}
             ></DiscountCard>
-          </SwiperSlide>
+          </div>
 
-          <SwiperSlide className="p-3">
+          <div className="p-3">
             <DiscountCard
               image="https://img.drz.lazcdn.com/static/bd/p/1cf9932af7c6ad8fa0c95434c7d48c1a.jpg_400x400q75.jpg_.webp"
               title="Antiseptic Cream"
@@ -100,9 +89,9 @@ const DiscountProducts = () => {
               basePrice={53}
               coupon={19}
             ></DiscountCard>
-          </SwiperSlide>
+          </div>
 
-          <SwiperSlide className="p-3">
+          <div className="p-3">
             <DiscountCard
               image="https://img.drz.lazcdn.com/static/bd/p/6dc5752c7832e5dee6e410e25473d547.jpg_400x400q75.jpg_.webp"
               title="Vapour Rub"
@@ -110,9 +99,9 @@ const DiscountProducts = () => {
               basePrice={57}
               coupon={12}
             ></DiscountCard>
-          </SwiperSlide>
+          </div>
 
-          <SwiperSlide className="p-3">
+          <div className="p-3">
             <DiscountCard
               image="https://img.drz.lazcdn.com/static/bd/p/1c7fa89623bb6a200aca7beabf88b33e.png_400x400q75.png_.webp"
               title="Multivitamin Tablets"
@@ -120,8 +109,8 @@ const DiscountProducts = () => {
               basePrice={12}
               coupon={7.5}
             ></DiscountCard>
-          </SwiperSlide>
-        </Swiper>
+          </div>
+        </Marquee>
       </div>
     </div>
   );

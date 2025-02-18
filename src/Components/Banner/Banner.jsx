@@ -17,7 +17,7 @@ const Banner = () => {
       >
         {slider.map((item) => (
           <SwiperSlide item={item} key={item._id}>
-            <div className="flex lg:flex-row flex-col justify-between items-center h-[310px] px-8">
+            <div className="flex lg:flex-row flex-col justify-between items-center lg:h-[310px] h-[350px] px-8">
               <div className="lg:w-1/2 w-full px-6 space-y-2">
                 <h4 className="lg:text-6xl text-3xl font-bold dark:text-white">
                   {item.description} <br />
@@ -32,7 +32,7 @@ const Banner = () => {
               </div>
               <div className="lg:w-1/2 w-full">
                 <img
-                  className="w-[400px] m-auto place-items-center"
+                  className="lg:w-[400px] w-[200px] m-auto place-items-center"
                   src={item.image}
                   alt=""
                 />
