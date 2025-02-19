@@ -14,6 +14,7 @@ import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 import "./shop.css";
 import { CiSearch } from "react-icons/ci";
 import { Helmet } from "react-helmet-async";
+import ShopCard from "../../Components/ShopCard/ShopCard";
 
 const Shop = () => {
   const [selectedData, setSelectedData] = useState(null);
@@ -26,18 +27,26 @@ const Shop = () => {
   const [itemsPerPage, setItemsPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(0);
   const numberOfPages = Math.ceil(count / itemsPerPage);
-  const [sort, setSort] = useState(false);
+  const [sort, setSort] = useState("");
   const [search, setSearch] = useState("");
   console.log(sort);
   const pages = [...Array(numberOfPages).keys()];
   console.log(pages);
 
+
   useEffect(() => {
-    axiosPublic(
-      `/medicine?page=${currentPage}&size=${itemsPerPage}&sort=${sort}&search=${search}`
-    ).then((res) => {
-      setMedicine(res.data);
-    });
+    const fetchData = async () => {
+      let url = `/medicine?page=${currentPage}&size=${itemsPerPage}&sort=${sort}&search=${search}`;
+      if (sort === "asc") url += "&sortAsc=true";
+      if (sort === "desc") url += "&sortDsc=true";
+      try {
+        const { data } = await axiosPublic(url);
+        setMedicine(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
   }, [currentPage, itemsPerPage, sort, search]);
 
   axiosPublic("/medicineCount").then((res) => {
@@ -138,62 +147,32 @@ const Shop = () => {
             <CiSearch></CiSearch>
           </label>
         </div>
-        <button
-          onClick={() => setSort(!sort)}
-          className="btn bg-[#4e97fd] text-white font-bold"
-        >
-          {sort ? "Sorted By Price" : "Sort By Price"}
-        </button>
+        <div className="space-x-2">
+          <button
+            onClick={() => setSort("asc")}
+            className="btn bg-[#4e97fd] text-white font-bold"
+          >
+            Sort By Ascending
+          </button>
+          <button
+            onClick={() => setSort("dsc")}
+            className="btn bg-[#4e97fd] text-white font-bold"
+          >
+            Sort By Descending
+          </button>
+        </div>
       </div>
-      <div className="overflow-x-auto w-11/12 mx-auto my-8">
-        <table className="table">
-          <thead>
-            <tr>
-              <th className="text-lg">Image</th>
-              <th className="text-lg">Category</th>
-              <th className="text-lg">Price</th>
-              <th className="text-lg">Action</th>
-              <th className="text-lg">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {medicine.map((item) => (
-              <tr item={item} key={item._id}>
-                <td>
-                  <div className="flex items-center gap-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle h-12 w-12">
-                        <img
-                          src={item.image}
-                          alt="Avatar Tailwind CSS Component"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="font-bold">{item.name}</div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <p className="font-bold p-1 px-2 bg-[#EFEDF2] inline rounded-full text-sm text-[#4E97FD]">
-                    {item.category_name}
-                  </p>
-                </td>
-                <td className="font-semibold text-base">$ {item.price}.00</td>
-                <td onClick={() => handleViewDetails(item)}>
-                  <p>
-                    <FaRegEye className="text-xl transform transition-transform duration-300 hover:scale-125"></FaRegEye>
-                  </p>
-                </td>
-                <td onClick={() => handleAddToCart(item)}>
-                  <p>
-                    <BiSelectMultiple className="text-xl transform transition-transform duration-300 hover:scale-125"></BiSelectMultiple>
-                  </p>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="w-11/12 mx-auto my-8">
+        <div className="grid lg:grid-cols-4 grid-cols-1 gap-5">
+          {medicine.map((item) => (
+            <ShopCard
+              key={item._id}
+              item={item}
+              handleViewDetails={handleViewDetails}
+              handleAddToCart={handleAddToCart}
+            ></ShopCard>
+          ))}
+        </div>
 
         <dialog id="my_modal" className="modal modal-bottom sm:modal-middle">
           {selectedData ? (
@@ -224,29 +203,38 @@ const Shop = () => {
           )}
         </dialog>
       </div>
-      <div className="pagination">
-        <button className="btn btn-xs" onClick={handlePrev}>
-          <GrFormPreviousLink></GrFormPreviousLink>
-        </button>
-        {pages.map((page) => (
-          <button
-            key={page}
-            onClick={() => setCurrentPage(page)}
-            className={
-              currentPage === page ? "selected btn btn-xs" : "btn btn-xs"
-            }
-          >
-            {page + 1}
-          </button>
-        ))}
-        <button className="btn btn-xs" onClick={handleNext}>
-          <GrFormNextLink></GrFormNextLink>
-        </button>
-        <select value={itemsPerPage} onChange={handlePagination}>
-          <option value="5">5</option>
-          <option value="10">10</option>
-        </select>
-      </div>
+      {medicine.length > 0 ? (
+        <>
+          <div className="pagination">
+            <button className="btn btn-xs" onClick={handlePrev}>
+              <GrFormPreviousLink></GrFormPreviousLink>
+            </button>
+            {pages.map((page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={
+                  currentPage === page ? "selected btn btn-xs" : "btn btn-xs"
+                }
+              >
+                {page + 1}
+              </button>
+            ))}
+
+            <button className="btn btn-xs" onClick={handleNext}>
+              <GrFormNextLink></GrFormNextLink>
+            </button>
+            <select value={itemsPerPage} onChange={handlePagination}>
+              <option value="5">5</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+        </>
+      ) : (
+        <h2 className="text-4xl font-bold h-[200px] text-center">
+          No Item Found
+        </h2>
+      )}
     </div>
   );
 };
