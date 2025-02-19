@@ -10,6 +10,7 @@ import { createContext, useEffect, useState } from "react";
 import { auth } from "../Firebase/firebase.init";
 import { GoogleAuthProvider } from "firebase/auth";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
+import Loading from "../Components/Loading/Loading";
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
@@ -77,6 +78,7 @@ const AuthProvider = ({ children }) => {
     logOut,
     profileUpdate,
   };
+  if (loading) return <Loading></Loading>;
   return (
     <>
       <AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>

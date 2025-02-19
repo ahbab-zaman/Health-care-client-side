@@ -52,7 +52,7 @@ const Profile = () => {
         </div>
       </section>
 
-      <section className="lg:w-3/4 w-11/12 mx-auto border border-blue-500 rounded-xl my-12 pt-4 pb-12 bg-[#f2f3f5] text-center space-y-4">
+      <section className="lg:w-3/4 w-11/12 mx-auto border border-blue-500 rounded-xl my-12 pt-4 pb-12 dark:bg-base-100 shadow-xl text-center space-y-4">
         <div className="flex justify-center items-center relative">
           <img
             className="w-40 h-40 rounded-full border-8 border-white"
@@ -68,6 +68,9 @@ const Profile = () => {
         </h2>
         <h2 className="font-bold">
           <span className="uppercase">User Name</span> : {user?.displayName}
+        </h2>
+        <h2 className="font-bold">
+          <span className="uppercase">User Email</span> : {user?.email}
         </h2>
         <button
           onClick={() => setIsOpen(true)}
