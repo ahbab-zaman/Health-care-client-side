@@ -1,9 +1,16 @@
-import { ClipLoader } from "react-spinners";
+import { DNA } from "react-loader-spinner";
 const Loading = () => {
   return (
     <div className="min-h-screen w-full flex justify-center items-center">
       <div className="w-32">
-        <ClipLoader color="#4e97fd" loading={true} size={50} />
+        <DNA
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="dna-loading"
+          wrapperStyle={{}}
+          wrapperClass="dna-wrapper"
+        />
       </div>
     </div>
   );

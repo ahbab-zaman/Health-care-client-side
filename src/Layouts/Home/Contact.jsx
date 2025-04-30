@@ -4,7 +4,7 @@ import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa6";
 
 const Contact = () => {
   return (
-    <div className="py-12 w-11/12 mx-auto">
+    <div className="w-11/12 mx-auto">
       <Title title="Contact us"></Title>
       <section className="flex lg:flex-row flex-col justify-between gap-8">
         <div className="lg:w-1/2 w-full space-y-4 pr-4 lg:border-r-2 dark:border-black">

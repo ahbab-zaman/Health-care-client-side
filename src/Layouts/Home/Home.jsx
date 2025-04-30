@@ -5,7 +5,6 @@ import Category from "./Category";
 import DiscountProducts from "./DiscountProducts";
 import TopBrands from "./TopBrands";
 import Review from "./Review";
-import Contact from "./Contact";
 import Join from "../Join/Join";
 import useAuth from "../../Hooks/useAuth";
 import Loading from "../../Components/Loading/Loading";
@@ -26,7 +25,6 @@ const Home = () => {
       <DealMedicine></DealMedicine>
       <Review></Review>
       <TopBrands></TopBrands>
-      <Contact></Contact>
       <Join></Join>
     </div>
   );
