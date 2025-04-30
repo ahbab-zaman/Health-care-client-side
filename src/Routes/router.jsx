@@ -135,16 +135,16 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {
-        path: "manageBanner",
-        element: (
-          <PrivateRoute>
-            <AdminRoute>
-              <ManageBanner></ManageBanner>
-            </AdminRoute>
-          </PrivateRoute>
-        ),
-      },
+      // {
+      //   path: "manageBanner",
+      //   element: (
+      //     <PrivateRoute>
+      //       <AdminRoute>
+      //         <ManageBanner></ManageBanner>
+      //       </AdminRoute>
+      //     </PrivateRoute>
+      //   ),
+      // },
       {
         path: "salesReport",
         element: (

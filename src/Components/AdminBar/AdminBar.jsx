@@ -76,7 +76,7 @@ const AdminBar = () => {
         </NavLink>
       </li>
 
-      <li className="mb-4 px-4">
+      {/* <li className="mb-4 px-4">
         <NavLink
           to="/dashboard/manageBanner"
           className={({ isActive }) =>
@@ -89,7 +89,7 @@ const AdminBar = () => {
           <RiAdvertisementFill></RiAdvertisementFill>
           Manage Banner
         </NavLink>
-      </li>
+      </li> */}
 
       <li className="mb-4 px-4">
         <NavLink
