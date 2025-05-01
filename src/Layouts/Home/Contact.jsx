@@ -59,36 +59,34 @@ const Contact = () => {
         </div>
         <div className="lg:w-1/2 w-full">
           <h4 className="text-3xl font-semibold">Drop a message</h4>
-          <label className="form-control w-full">
-            <div className="label">
-              <span className="label-text text-lg font-semibold">Name</span>
+          <label className="form-control w-full gap-2">
+            <div className="">
+              <span className=" text-lg font-semibold">Name</span>
             </div>
             <input
               type="text"
               placeholder="Enter Your Name"
-              className="input bg-base-200 focus:outline-none"
+              className="input border-gray-400 border-[1px] focus:outline-none custom-input"
             />
           </label>
 
-          <label className="form-control w-full">
-            <div className="label">
-              <span className="label-text text-lg font-semibold">Email</span>
+          <label className="form-control w-full gap-2">
+            <div className="">
+              <span className="text-lg font-semibold">Email</span>
             </div>
             <input
               type="email"
               placeholder="Enter Your Email"
-              className="input bg-base-200 focus:outline-none"
+              className="input border-gray-400 border-[1px] focus:outline-none custom-input"
             />
           </label>
 
-          <label className="form-control w-full">
-            <div className="label">
-              <span className="label-text text-lg font-semibold">
-                Your Message
-              </span>
+          <label className="form-control w-full gap-2">
+            <div className="">
+              <span className="text-lg font-semibold">Your Message</span>
             </div>
             <textarea
-              className="input bg-base-200 focus:outline-none h-[120px] resize-none p-4"
+              className="input border-gray-400 border-[1px] custom-input focus:outline-none h-[120px] resize-none p-4"
               placeholder="Enter Your Message"
             ></textarea>
           </label>

@@ -86,7 +86,7 @@ const HeroSlider = ({ transitionEffect = "fadeZoom" }) => {
             <p className="text-white text-lg sm:text-xl max-w-2xl">
               {slide.subtitle}
             </p>
-            <Link><button className="px-4 py-2 rounded-lg text-[#000] font-semibold bg-base-100">Buy Now</button></Link>
+            <Link to="/shop"><button className="px-4 py-2 rounded-lg text-[#000] font-semibold bg-base-100">Buy Now</button></Link>
           </div>
         </div>
       ))}

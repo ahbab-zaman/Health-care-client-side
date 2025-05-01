@@ -32,7 +32,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full bg-base-100 sticky top-0 z-40">
+    <div className="w-full nav sticky top-0 z-40">
       {/* Mobile Sidebar */}
       <div
         className={`fixed inset-0 z-50 flex transition-opacity duration-300 ${

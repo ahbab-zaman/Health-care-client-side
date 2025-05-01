@@ -12,3 +12,23 @@ body.dark {
   background-color: #1e1e1e;
   color: white;
 }
+.nav{
+  background-color: #fff;
+  color: #000;
+}
+.dark .nav{
+  background-color: #222;
+  color: #fff;
+}
+.custom-input{
+  background-color: #fff;
+}
+.dark .custom-input{
+  background-color: #000;
+}
+.bg-color{
+  background-color: transparent;
+}
+.dark .bg-color{
+  background-color: #000;
+}

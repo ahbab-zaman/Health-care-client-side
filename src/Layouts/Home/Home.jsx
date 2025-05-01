@@ -13,7 +13,7 @@ const Home = () => {
   const { loading } = useAuth();
   if (loading) return <Loading></Loading>;
   return (
-    <div className="bg-base-100">
+    <div >
       <div>
         <Helmet>
           <title>Health Care | Home</title>
