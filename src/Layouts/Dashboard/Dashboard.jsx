@@ -22,8 +22,8 @@ const Dashboard = () => {
       <div className="flex">
         {/* Sidebar */}
         <div
-          className={`
-          fixed lg:static top-0 left-0 z-50 min-h-screen w-[70%] sm:w-[50%] lg:w-[20%] bg-[#F2F3F5] py-3
+          className={`custom-sidebar
+          fixed lg:static top-0 left-0 z-50 min-h-screen w-[70%] sm:w-[50%] lg:w-[20%] py-3
           transition-transform duration-300 ease-in-out
           ${
             sidebarOpen ? "translate-x-0" : "-translate-x-full"

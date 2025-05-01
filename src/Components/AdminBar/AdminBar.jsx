@@ -22,7 +22,7 @@ const AdminBar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-[#333333] bg-[#c7c7c9] font-semibold flex items-center gap-2 text-lg p-2 rounded-lg"
-              : "text-black bg-transparent flex items-center gap-2 text-lg font-semibold p-2 rounded-lg"
+              : "bg-transparent flex items-center gap-2 text-lg font-semibold p-2 rounded-lg"
           }
         >
           {" "}
@@ -37,7 +37,7 @@ const AdminBar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-[#333333] bg-[#c7c7c9] font-semibold flex items-center gap-2 text-lg p-2 rounded-lg"
-              : "text-black bg-transparent flex items-center gap-2 text-lg font-semibold p-2 rounded-lg"
+              : "bg-transparent flex items-center gap-2 text-lg font-semibold p-2 rounded-lg"
           }
         >
           {" "}
@@ -52,7 +52,7 @@ const AdminBar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-[#333333] bg-[#c7c7c9] font-semibold flex items-center gap-2 text-lg p-2 rounded-lg"
-              : "text-black bg-transparent flex items-center gap-2 text-lg font-semibold p-2 rounded-lg"
+              : " bg-transparent flex items-center gap-2 text-lg font-semibold p-2 rounded-lg"
           }
         >
           {" "}
@@ -67,7 +67,7 @@ const AdminBar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-[#333333] bg-[#c7c7c9] font-semibold flex items-center gap-2 text-lg p-2 rounded-lg"
-              : "text-black bg-transparent flex items-center gap-2 text-lg font-semibold p-2 rounded-lg"
+              : "bg-transparent flex items-center gap-2 text-lg font-semibold p-2 rounded-lg"
           }
         >
           {" "}
@@ -97,7 +97,7 @@ const AdminBar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-[#333333] bg-[#c7c7c9] font-semibold flex items-center gap-2 text-lg p-2 rounded-lg"
-              : "text-black bg-transparent flex items-center gap-2 text-lg font-semibold p-2 rounded-lg"
+              : "bg-transparent flex items-center gap-2 text-lg font-semibold p-2 rounded-lg"
           }
         >
           {" "}

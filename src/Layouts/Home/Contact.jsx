@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div className="w-11/12 mx-auto">
       <Title title="Contact us"></Title>
-      <section className="flex lg:flex-row flex-col justify-between gap-8">
+      <section className="flex lg:flex-row flex-col justify-between gap-8 py-6">
         <div className="lg:w-1/2 w-full space-y-4 pr-4 lg:border-r-2 dark:border-black">
           <h4 className="text-3xl font-semibold">Our Main Office</h4>
           <p className="font-semibold text-justify">

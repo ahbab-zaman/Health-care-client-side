@@ -32,3 +32,65 @@ body.dark {
 .dark .bg-color{
   background-color: #000;
 }
+.dp-content{
+  background-color: #fff;
+  color: #000;
+}
+.dark .dp-content{
+  background-color: #000;
+  color: #fff;
+}
+.cart-total{
+  background-color: #F8F8F8;
+}
+.dark .cart-total{
+  background-color: #000;
+}
+.custom-modal{
+  background-color: #f2f2f2;
+}
+.dark .custom-modal{
+  background-color: #000;
+}
+.custom-sidebar{
+  background-color: #F2F3F5;
+  color: #000;
+}
+.dark .custom-sidebar{
+  background-color: #000;
+  color: #fff;
+}
+.custom-stat{
+  background-color: #f2f3f5;
+  color: #000;
+}
+.dark .custom-stat{
+  background-color: #222;
+  color: #fff;
+}
+.custom-white{
+  color: #000;
+}
+.dark .custom-white{
+  color: #fff;
+}
+.custom-select{
+  background-color: #fff;
+}
+.dark .custom-select{
+  background-color: #000;
+}
+.custom-date{
+  background-color: #fff;
+}
+.dark .custom-date{
+  background-color: #000;
+}
+.custom-login{
+  background-color: #EEF7FC;
+  color: #000;
+}
+.dark .custom-login{
+  background-color: #000;
+  color: #fff;
+}

@@ -31,12 +31,12 @@ const SocialLogin = () => {
   return (
     <div
       onClick={handleGoogleSignIn}
-      className="flex justify-between items-center w-[90%] mx-auto border p-3 rounded-full bg-white"
+      className="flex justify-between items-center w-[90%] mx-auto border p-3 rounded-full "
     >
       <div>
         <img className="w-8" src={googleImg} alt="" />
       </div>
-      <div className="text-[#333333] text-lg font-bold">Login With Google</div>
+      <div className=" text-lg font-bold">Login With Google</div>
       <div></div>
     </div>
   );
