@@ -8,6 +8,7 @@ import Review from "./Review";
 import Join from "../Join/Join";
 import useAuth from "../../Hooks/useAuth";
 import Loading from "../../Components/Loading/Loading";
+import Services from "./Services";
 
 const Home = () => {
   const { loading } = useAuth();
@@ -19,13 +20,14 @@ const Home = () => {
           <title>Health Care | Home</title>
         </Helmet>
       </div>
-      <Banner></Banner>
-      <Category></Category>
-      <DiscountProducts></DiscountProducts>
-      <DealMedicine></DealMedicine>
-      <Review></Review>
-      <TopBrands></TopBrands>
-      <Join></Join>
+      <Banner />
+      <Category />
+      <DiscountProducts />
+      <Services />
+      <DealMedicine />
+      <Review />
+      <TopBrands />
+      <Join />
     </div>
   );
 };
