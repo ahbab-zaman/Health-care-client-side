@@ -5,29 +5,29 @@ import Category from "./Category";
 import DiscountProducts from "./DiscountProducts";
 import TopBrands from "./TopBrands";
 import Review from "./Review";
-import Contact from "./Contact";
 import Join from "../Join/Join";
 import useAuth from "../../Hooks/useAuth";
 import Loading from "../../Components/Loading/Loading";
+import Services from "./Services";
 
 const Home = () => {
   const { loading } = useAuth();
   if (loading) return <Loading></Loading>;
   return (
-    <div className="bg-base-100">
+    <div >
       <div>
         <Helmet>
           <title>Health Care | Home</title>
         </Helmet>
       </div>
-      <Banner></Banner>
-      <Category></Category>
-      <DiscountProducts></DiscountProducts>
-      <DealMedicine></DealMedicine>
-      <Review></Review>
-      <TopBrands></TopBrands>
-      <Contact></Contact>
-      <Join></Join>
+      <Banner />
+      <Category />
+      <DiscountProducts />
+      <Services />
+      <DealMedicine />
+      <Review />
+      <TopBrands />
+      <Join />
     </div>
   );
 };

@@ -33,7 +33,7 @@ const UserTable = ({ user, refetch }) => {
         <select
           onChange={(event) => handleUpdate(event.target.value)}
           defaultValue={role}
-          className="select select-accent w-full"
+          className="select select-accent w-full custom-select"
         >
           <option disabled>Update Role</option>
           <option value="admin">admin</option>

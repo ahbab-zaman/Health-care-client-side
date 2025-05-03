@@ -27,6 +27,7 @@ import SalesReport from "../SharedFiles/AdminLayout/SalesReport";
 import Join from "../Layouts/Join/Join";
 import Profile from "../Layouts/Profile/Profile";
 import Error from "../Pages/Error/Error";
+import Contact from "../Layouts/Home/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ export const router = createBrowserRouter([
             <Shop></Shop>
           </PrivateRoute>
         ),
+      },
+      {
+        path:"/contact",
+        element:<Contact />
       },
       {
         path: "/cart",
@@ -135,16 +140,16 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {
-        path: "manageBanner",
-        element: (
-          <PrivateRoute>
-            <AdminRoute>
-              <ManageBanner></ManageBanner>
-            </AdminRoute>
-          </PrivateRoute>
-        ),
-      },
+      // {
+      //   path: "manageBanner",
+      //   element: (
+      //     <PrivateRoute>
+      //       <AdminRoute>
+      //         <ManageBanner></ManageBanner>
+      //       </AdminRoute>
+      //     </PrivateRoute>
+      //   ),
+      // },
       {
         path: "salesReport",
         element: (

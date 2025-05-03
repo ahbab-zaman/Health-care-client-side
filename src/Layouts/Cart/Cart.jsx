@@ -45,7 +45,7 @@ const Cart = () => {
             ))}
           </div>
 
-          <div className="lg:w-1/4 w-full mx-auto bg-[#F8F8F8] py-12 px-6">
+          <div className="lg:w-1/4 w-full mx-auto cart-total py-12 px-6">
             <h4 className="text-xl font-bold">Cart Total</h4>
             <div className="divider"></div>
             <div className="flex justify-between items-center">

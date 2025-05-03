@@ -15,7 +15,7 @@ const Status = ({ item, refetch }) => {
     <div>
       <select
         onChange={(e) => handleStatus(e.target.value)}
-        className="select select-bordered w-full"
+        className="select select-bordered w-full custom-select"
         defaultValue={status}
       >
         <option>pending</option>

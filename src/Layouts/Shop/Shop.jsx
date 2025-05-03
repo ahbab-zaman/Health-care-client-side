@@ -174,9 +174,9 @@ const Shop = () => {
           ))}
         </div>
 
-        <dialog id="my_modal" className="modal modal-bottom sm:modal-middle">
+        <dialog id="my_modal" className=" modal modal-bottom sm:modal-middle">
           {selectedData ? (
-            <div className="modal-box">
+            <div className="modal-box custom-modal">
               <img src={selectedData.image} alt="" />
               <h3 className="font-bold text-lg">{selectedData.name}</h3>
               <div className="py-2">
@@ -224,7 +224,7 @@ const Shop = () => {
             <button className="btn btn-xs" onClick={handleNext}>
               <GrFormNextLink></GrFormNextLink>
             </button>
-            <select value={itemsPerPage} onChange={handlePagination}>
+            <select className="custom-select" value={itemsPerPage} onChange={handlePagination}>
               <option value="5">5</option>
               <option value="10">10</option>
             </select>

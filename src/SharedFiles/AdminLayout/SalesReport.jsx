@@ -82,7 +82,7 @@ const SalesReport = () => {
               <input
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
-                className="border-2 rounded-lg p-2"
+                className="border-2 rounded-lg p-2 custom-date"
                 type="date"
                 name=""
                 id=""
@@ -93,7 +93,7 @@ const SalesReport = () => {
               <input
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
-                className="border-2 rounded-lg p-2"
+                className="border-2 rounded-lg p-2 custom-date"
                 type="date"
                 name=""
                 id=""

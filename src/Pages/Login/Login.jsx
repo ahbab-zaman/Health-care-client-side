@@ -40,10 +40,11 @@ const Login = () => {
           </Link>
         </div>
       </div>
-      <div className="bg-[#EEF7FC] lg:w-3/4 w-full mx-auto p-6 my-12">
+      <div className="py-8">
+      <div className="custom-login lg:w-3/4 w-full mx-auto px-6 py-12 mt-12">
         <h1 className="text-3xl font-semibold text-center">Sign In</h1>
         <div>
-          <p className="text-[#333333] font-light py-4 text-center">
+          <p className="font-light py-4 text-center">
             New to this account?{" "}
             <Link to="/register" className="font-semibold text-[#4E97FD]">
               Register
@@ -55,9 +56,10 @@ const Login = () => {
             <div className="hero-content w-11/12 mx-auto">
               <div className="card w-full">
                 <form className="card-body w-full" onSubmit={handleSubmit(onSubmit)}>
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text font-semibold text-[#333333]">
+                  
+                  <div className="form-control gap-2">
+                    <label className="">
+                      <span className="font-semibold">
                         Enter Your Email
                       </span>
                     </label>
@@ -65,13 +67,13 @@ const Login = () => {
                       {...register("email", { required: true })}
                       type="email"
                       placeholder="Your Email"
-                      className="input input-bordered rounded-full"
+                      className="input input-bordered rounded-full custom-input border-[1px] border-gray-400"
                       required
                     />
                   </div>
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text font-semibold text-[#333333]">
+                  <div className="form-control gap-2">
+                    <label>
+                      <span className=" font-semibold">
                         Enter Your Password
                       </span>
                     </label>
@@ -79,7 +81,7 @@ const Login = () => {
                       type="password"
                       {...register("password", { required: true })}
                       placeholder="Your Password"
-                      className="input input-bordered rounded-full"
+                      className="input input-bordered rounded-full border-gray-400 border-[1px] custom-input"
                       required
                     />
                   </div>
@@ -92,9 +94,12 @@ const Login = () => {
               </div>
             </div>
           </div>
+
+
           <div className="divider -mt-4 mb-4 w-[90%] mx-auto font-bold">OR</div>
           <SocialLogin></SocialLogin>
         </div>
+      </div>
       </div>
     </div>
   );
