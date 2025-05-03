@@ -117,7 +117,7 @@ const Navbar = () => {
           </div>
           <Link to="/">
             <div className="flex items-center">
-              <img className="w-14" src={logo} alt="Logo" />
+              <img className="w-14 -ml-3" src={logo} alt="Logo" />
               <h2 className="lg:text-xl text-lg font-bold lg:flex hidden">
                 {t("logo")}
               </h2>

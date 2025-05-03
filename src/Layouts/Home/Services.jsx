@@ -31,7 +31,7 @@ const service = [
 ];
 const Services = () => {
   return (
-    <div className="flex lg:flex-row flex-col w-11/12 mx-auto justify-between py-4">
+    <div className="flex lg:flex-row flex-col items-center w-11/12 mx-auto justify-between lg:gap-0 gap-3 py-4">
       {service.map((item) => (
         <ServiceCard key={item.id} item={item} />
       ))}

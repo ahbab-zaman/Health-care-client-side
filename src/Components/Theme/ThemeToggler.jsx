@@ -16,30 +16,29 @@ const ThemeToggler = () => {
   }, [darkMode]);
 
   return (
-    <label className="flex items-center cursor-pointer space-x-3">
-      <input
-        type="checkbox"
-        checked={darkMode}
-        onChange={() => setDarkMode(!darkMode)}
-        className="sr-only"
-      />
+    <div className="fixed bottom-6 right-4 z-50">
       <div
-        className={`w-14 h-8 flex items-center rounded-full p-1 duration-300 ${
-          darkMode ? "bg-gray-700" : "bg-yellow-400"
+        onClick={() => setDarkMode(!darkMode)}
+        className={`w-14 h-8 flex items-center px-1 rounded-full cursor-pointer relative transition-colors duration-300 ${
+          darkMode ? "bg-gray-300" : "bg-gray-800"
         }`}
       >
+        {/* Toggle knob */}
         <div
-          className={`bg-white w-6 h-6 rounded-full shadow-md transform duration-300 ${
+          className={`w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 ${
             darkMode ? "translate-x-6" : "translate-x-0"
           }`}
         />
+        {/* Icon inside switch */}
+        <div className="absolute left-1/2 top-1/2  -translate-y-1/2 pointer-events-none">
+          {darkMode ? (
+            <FaMoon className="text-white text-sm -translate-x-[130%]" />
+          ) : (
+            <FaSun className="text-yellow-500 text-sm translate-x-[50%]" size={15} />
+          )}
+        </div>
       </div>
-      {darkMode ? (
-        <FaMoon className="text-blue-300 text-xl" />
-      ) : (
-        <FaSun className="text-yellow-500 text-xl" />
-      )}
-    </label>
+    </div>
   );
 };
 
